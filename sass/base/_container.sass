@@ -1,0 +1,40 @@
+// Container base
+=container-base
+    display: grid
+    grid-template-columns: repeat(12, minmax(10px,1fr))
+    grid-template-rows: repeat(1, 100%)
+    grid-gap: 0
+    height: 100%
+    width: 100%
+    align-items: center
+    max-width: 1280px
+    padding: 0 80px
+
+
+// Extra large - 1140px
+=extra-large-container
+    @media (min-width: 1200px)
+        +container-base
+        
+
+// Large - 960px
+=large-container
+    @media (max-width: 1199px)
+        +container-base 
+
+// Medium - 720px
+=medium-container
+    @media (max-width: 991px)
+        +container-base
+        padding: 0 40px
+
+
+// Small - 540px
+// @media (max-width: 767px)
+    
+
+// Mobile
+=mobile-container
+    @media (max-width: 575px)
+        //width: auto //100%
+        padding: 0 17px

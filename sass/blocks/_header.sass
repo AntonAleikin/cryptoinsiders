@@ -1,0 +1,65 @@
+.header
+    +flex-center
+    height: 100px
+    width: 100%
+    position: fixed
+    top: 0
+    z-index: 5
+    background-color: #222
+
+.nav
+    +extra-large-container
+
+    &__logo
+        display: flex
+        align-items: center
+        justify-content: flex-start
+        height: 100%
+        grid-column-start: 1
+        grid-column-end: 5
+        
+        &-link
+            font-family: Gotham Pro, sans-serif
+            font-size: 26px
+            font-weight: 600
+            color: $logo_color
+            &:hover
+                color: $logo_color
+                text-decoration: none
+
+
+    // Соцсети для мобилок
+    &__social
+        display: none
+                
+
+    // Menu
+    &__links
+        display: flex
+        align-items: center
+        justify-content: flex-end
+        height: 100%
+        grid-column-start: 8
+        grid-column-end: 13
+
+        &-logo
+            display: none
+
+        &-item
+            font-family: 'Montserrat', sans-serif
+            margin-right: 20px
+            font-size: 14px
+            line-height: 140%
+            font-weight: 700
+            text-decoration: none
+            color: #828282
+            transition: color .3s linear
+            &:last-child
+                margin-right: 0
+                color: $logo_color
+            &:hover
+                text-decoration: none
+                color: $white_color    
+
+    &__humburger
+        display: none 

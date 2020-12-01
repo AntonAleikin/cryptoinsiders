@@ -1,0 +1,108 @@
+// Large
+@media (max-width: 1199px)
+    .home-section
+        &__promo
+            +large-container
+
+
+// Medium 
+@media (max-width: 991px)
+    .home-section
+        &__promo
+            +medium-container
+
+            &-bull
+                height: 65vh
+
+            &-slogan
+                font-size: 6vh 
+                line-height: 7vh 
+
+            &-text
+                font-size: 3.4vh
+                line-height: 5vh
+    
+    // Убираем Hover у всех section link 
+    .section-link_home
+        +link-to-other-section-media
+
+
+// Small
+@media (max-width: 767px)
+    .home-section
+        padding-top: 80px 
+        &__promo
+
+            &-bull
+                grid-column-start: 1
+                height: 60vh
+
+            &-slogan
+                font-size: 5vh 
+                line-height: 7vh 
+
+            &-text
+                margin-top: 5vh
+                font-size: 3.2vh
+                line-height: 5vh
+    
+    .section-link_home
+        margin-top: 6vh
+        +link-to-other-section-media
+
+
+// Mobile
+@media (max-width: 575px)
+    .home-section
+        padding-top: 70px 
+
+        &__promo
+            +mobile-container
+            &-bull
+                position: absolute
+                z-index: 0
+                right: 0
+                bottom: 20px
+                height: 150px //40vh 
+
+            &-descr
+                position: relative
+                z-index: 1
+                grid-column-start: 1
+                grid-column-end: 10
+                align-self: self-start
+
+            &-slogan
+                margin-top: 30% //60px 
+                font-size: 24px 
+                font-weight: 600
+                line-height: 30px 
+
+            &-text
+                font-size: 16px
+                line-height: 24px
+    
+    .section-link_home
+        display: none
+
+    .section-link_mobile
+        display: block
+        margin-top: 5vh
+        margin-left: 10px 
+        &__link
+            display: flex
+            justify-content: flex-start
+            align-items: center
+            height: 16px
+            &:hover
+                text-decoration: none
+
+        &__text
+            font-size: 16px
+            line-height: 16px
+            color: $white_color
+
+        &__img
+            margin-left: 5px
+            height: inherit
+            transform: translateY(10%)

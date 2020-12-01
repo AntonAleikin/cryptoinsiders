@@ -1,0 +1,44 @@
+=flex-center
+    display: flex
+    justify-content: center
+    align-items: center
+
+=flex-between-center
+    display: flex
+    justify-content: space-between
+    align-items: center
+
+
+// Кнопка со стрелкой на следующую секцию
+=link-to-other-section
+    .section-link
+        &__link
+            +flex-center
+            text-decoration: none
+            color: $white_color
+            font-size: 3vh
+
+            &-hover
+                &:hover
+                    transition: all 0.2s linear
+                    text-decoration: none
+                    transform: translateY(-2px)
+                    text-shadow: 0px 2px 2px grey
+                    color: $white_color
+
+        &__text
+            font-family: Gotham Pro, sans-serif
+
+        &__img
+            margin-left: 5px
+            height: 3vh
+            transform: translateY(0.3vh) //Выравниваем стрелочку (опускаем вниз) 
+
+=link-to-other-section-media
+    .section-link
+        &__link
+            &-hover
+                &:hover
+                    transition: none
+                    transform: none
+                    text-shadow: none
