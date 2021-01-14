@@ -1,0 +1,140 @@
+.home-section
+    padding: $extra-large-padding
+    padding-top: 100px
+    height: 100vh
+    min-height: 100vh
+    width: 100%
+    +center
+
+    &__bg
+        height: 100%
+        width: 100%
+        background: url(../../assets/img/home-bg.jpg) center (center / cover) no-repeat
+
+    &__promo
+        height: 100%
+        width: 100%
+        background-color: rgba(26, 27, 32, 0.8)
+        +center
+
+        &-bull
+            padding-right: 20px
+            display: flex
+            justify-content: flex-end
+            align-items: center
+            &-img
+                height: 65vh
+
+        // Description
+        &-descr
+            padding-left: 20px
+            width: 56%
+            display: flex
+            flex-direction: column
+            align-items: flex-start
+            justify-content: center
+            font-family: Gotham Pro, sans-serif
+            letter-spacing: 0.5px
+        
+        &-slogan
+            margin: 0
+            font-size: $h1-extra
+            font-weight: 500
+            color: $main-color 
+        &-text
+            margin-top: 5vh
+            padding-left: 20px 
+            font-size: $h2-extra
+            font-weight: 400
+            line-height: $h2-extra-line
+            color: white
+
+    // More button        
+    &__button
+        margin-top: 5.2vh
+        margin-left: 20px
+        height: 5.2vh
+        width: 22vh 
+        border: none
+        background-color: white
+        +center
+        cursor: pointer
+        &:hover
+            background-color: #f2f3f4
+        &-link
+            padding: 10px
+            text-decoration: none
+            +center
+        &-text
+            font-family: Montserrat-cyrillic, sans-serif
+            margin-right: 10px
+            font-size: 2.5vh 
+            font-weight: 500
+            letter-spacing: -0.5px
+            color: $bg-color  
+        &-img
+            height: 2.7vh 
+
+
+// ================
+
+// Large
+@media (max-width: 1199px) 
+    .home-section
+        padding: $large-padding
+        padding-top: 90px
+
+// Medium
+@media (max-width: 991px) 
+    .home-section
+        padding: $medium-padding
+        padding-top: 90px
+        &__promo
+            &-bull
+                padding-right: 10px
+            &-descr
+                padding-left: 10px
+            &-slogan
+                font-size: $h1-medium
+            &-text
+                font-size: $h2-medium
+                line-height: $h2-medium-line
+
+// Small
+@media (max-width: 799px)
+    .home-section
+        padding-top: 80px
+        position: relative
+        &__bg
+            background: url(../../assets/img/home-bg-mid.jpg) center (center / cover) no-repeat
+        &__promo
+            &-bull
+                padding-right: 0
+                position: absolute
+                right: 30px
+                bottom: 30px
+                &-img
+                    height: 30vh
+            &-descr
+                padding: 0
+                width: 100%
+            &-text
+                padding-left: 10px
+        &__button
+            margin-left: 10px
+
+// Mobile
+@media (max-width: 575px)
+    .home-section
+        padding: $mobile-padding
+        padding-top: 70px
+        &__bg
+            background: url(../../assets/img/home-bg-mobile.jpg) center (center / cover) no-repeat
+        &__promo
+            &-bull
+                display: none
+            &-slogan
+                font-size: $h1-mobile
+            &-text
+                font-size: $h2-mobile
+                line-height: $h2-mobile-line

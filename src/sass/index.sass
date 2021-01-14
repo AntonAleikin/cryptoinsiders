@@ -1,0 +1,25 @@
+@import '~normalize.css'
+
+*
+    box-sizing: border-box
+    margin: 0 
+    padding: 0 
+
+@import 'base/fonts'   
+
+// Base
+@import "base/variables"
+@import "base/mixins"
+
+
+// Blocks
+@import 'blocks/header'
+@import 'blocks/social-bar'
+@import 'blocks/home'
+
+
+// Globals
+.body
+    width: 100vw
+    overflow-x: hidden
+    background-color: $bg-color 
