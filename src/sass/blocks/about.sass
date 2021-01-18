@@ -1,0 +1,174 @@
+=pseudo-devider
+    content: ''
+    display: block
+    width: 1px
+    height: 100% 
+    position: absolute
+    top: 0
+    left: 10% // Ширина первой секции с датой
+    transform: translateX(10px) // Половина шарика
+    background-color: $main-color
+
+.about-section
+    font-family: Gotham Pro
+    letter-spacing: 0.5px
+    padding: $extra-large-padding
+    +extra-large-top-bottom-padding
+    width: 100%
+    height: auto
+    background-color: $bg-color
+    display: flex
+    flex-direction: column
+    align-items: center
+    justify-content: flex-start
+
+    &__text
+        margin-top: 95px
+        padding-left: 70px
+        width: 100%
+        +medium-text
+        font-weight: 400
+        color: white
+
+        &-header 
+            +large-text
+            font-weight: 500
+            color: $main-color
+    
+    &__roadmap
+        margin-top: 60px
+        padding-left: 70px
+        width: 100%
+        height: auto
+        display: flex
+        flex-direction: column
+        align-items: flex-start
+        justify-content: flex-start
+
+        &-item
+            padding-top: 60px
+            width: 100%
+            position: relative
+            display: flex
+            justify-content: flex-start
+            align-items: center
+            &:first-child
+                padding-top: 0
+        &-date
+            width: 10%
+            +medium-text
+            font-weight: 500
+            color: $main-color
+            +center
+
+        &-bullet
+            width: 5%
+            &::before
+                +pseudo-devider
+            &_first
+                &::before 
+                    +pseudo-devider
+                    height: 50%
+                    top: 50%
+            &_last
+                &::before 
+                    +pseudo-devider
+                    height: 70% 
+        &-round
+            width: 20px
+            height: 20px
+            border-radius: 100%
+            background-color: $main-color
+        &-descr
+            width: 70%
+            +medium-text
+            color: white
+        &-link
+            color: white
+
+
+// ================
+
+// Large
+@media (max-width: 1199px) 
+    .about-section
+        padding: $large-padding
+        +large-top-bottom-padding
+        &__text
+            margin-top: 70px
+            padding-left: 60px
+            +normal-text
+            &-header 
+                +medium-text
+        &__roadmap
+            margin-top: 50px
+            padding-left: 60px
+            &-item
+                padding-top: 50px
+            &-date
+                +normal-text
+            &-descr
+                width: 80%
+                +normal-text
+
+// Medium
+@media (max-width: 991px) 
+    .about-section
+        padding: $medium-padding
+        +large-top-bottom-padding
+        &__text
+            margin-top: 60px
+            +small-text
+            &-header 
+                +normal-text
+        &__roadmap
+            margin-top: 40px
+            &-item
+                padding-top: 40px
+            &-date
+                +small-text
+            &-bullet
+                &::before
+                    transform: translateX(7.5px)
+            &-round
+                width: 15px
+                height: 15px
+            &-descr
+                width: 80%
+                +small-text
+
+// Small
+@media (max-width: 799px)
+    .about-section
+        +small-top-bottom-padding
+        &__text
+            padding-left: 0
+            +mobile-text
+            &-header 
+                +small-text
+        &__roadmap
+            padding-left: 0
+            &-date
+                justify-content: flex-start
+                +mobile-text
+            &-descr
+                width: 85%
+                +mobile-text
+
+// Mobile
+@media (max-width: 575px)
+    .about-section
+        padding: $mobile-padding
+        +mobile-top-bottom-padding
+        &__text
+            margin-top: 50px
+        &__roadmap
+            &-item
+                flex-direction: column
+                justify-content: flex-start
+                align-items: flex-start
+            &-bullet
+                display: none
+            &-descr
+                padding-left: 10px
+                width: 100%

@@ -102,6 +102,15 @@ const  babelOptions = preset => // Добавляем пресеты и плаг
 };
 
 
+const copyAssets = (from, to = '') =>
+{
+    return {
+        from: path.resolve(__dirname, `src/${from}`),
+        to: path.resolve(__dirname, `dist/${to}`),
+    };
+};
+
+
 const plugins = () => // Тут все наши плагины и их анализ в проде
 {
     const base = [
@@ -124,18 +133,8 @@ const plugins = () => // Тут все наши плагины и их анал�
         base.push(
             new CopyWebpackPlugin({
                 patterns: [
-    
-                    // Favicons
-                    {
-                        from: path.resolve(__dirname, 'src/assets/favicons'),
-                        to: path.resolve(__dirname, 'dist'),
-                    },
-    
-                    // Static
-                    {
-                        from: path.resolve(__dirname, 'src/assets/static'),
-                        to: path.resolve(__dirname, 'dist'),
-                    }
+                    copyAssets('assets/favicons', 'media'), // Favicons
+                    copyAssets('assets/og', 'media'), // OG
                 ]
             }),
         );

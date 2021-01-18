@@ -44,9 +44,8 @@
         &-text
             margin-top: 5vh
             padding-left: 20px 
-            font-size: $h2-extra
+            +h2-extra
             font-weight: 400
-            line-height: $h2-extra-line
             color: white
 
     // More button        
@@ -97,8 +96,7 @@
             &-slogan
                 font-size: $h1-medium
             &-text
-                font-size: $h2-medium
-                line-height: $h2-medium-line
+                +h2-medium
 
 // Small
 @media (max-width: 799px)
@@ -136,5 +134,4 @@
             &-slogan
                 font-size: $h1-mobile
             &-text
-                font-size: $h2-mobile
-                line-height: $h2-mobile-line
+                +h2-mobile
