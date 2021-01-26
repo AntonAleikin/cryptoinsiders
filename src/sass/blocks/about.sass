@@ -10,18 +10,9 @@
     background-color: $main-color
 
 .about-section
-    font-family: Gotham Pro
+    +basic-section
     letter-spacing: 0.5px
-    padding: $extra-large-padding
-    +extra-large-top-bottom-padding
-    width: 100%
-    height: auto
-    background-color: $bg-color
-    display: flex
-    flex-direction: column
-    align-items: center
-    justify-content: flex-start
-
+    
     &__text
         margin-top: 95px
         padding-left: 70px
@@ -34,7 +25,7 @@
             +large-text
             font-weight: 500
             color: $main-color
-    
+
     &__roadmap
         margin-top: 60px
         padding-left: 70px
@@ -84,7 +75,8 @@
             +medium-text
             color: white
         &-link
-            color: white
+            text-decoration: none
+            color: $main-color
 
 
 // ================

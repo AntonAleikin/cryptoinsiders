@@ -1,0 +1,146 @@
+@import 'swiper/swiper.scss'
+@import 'swiper/components/navigation/navigation.scss'
+@import 'swiper/components/pagination/pagination.scss'
+@import 'swiper/components/lazy/lazy.scss'
+    
+.testimonials-section
+    +basic-section
+    letter-spacing: 0.5px
+    &__header
+        margin-top: 95px
+        padding-left: 70px
+        +h2-extra
+        color: $main-color
+    &__wrapper
+        padding-left: 70px
+        width: 100%
+        +between-center
+    &__descr
+        width: 50%
+        +medium-text
+        color: white
+        &-link
+            color: $main-color
+            text-decoration: none
+    &__slider
+        width: 50%
+        +column-center
+        &-navigation
+            margin-top: 20px
+            width: 40%
+            height: 30px
+            color: $main-color
+            +between-center
+    &__img
+        height: 100%
+        border-radius: 4px
+
+// Swiper
+.swiper-container
+    width: 500px // Изменяем ширину всего контейнера, Чтобы изменить ширину слайда
+
+.swiper-slide
+    height: 370px
+    +center
+
+.swiper-pagination
+    position: static
+    margin: 0
+    padding: 0
+    width: 40px
+    height: 100%
+    +center
+
+.swiper-button-prev, .swiper-button-next
+    position: static
+    margin: 0
+    padding: 0
+    width: 20px
+    height: 100%
+    border: none
+    border-radius: 100%
+    background-position: center center
+    background-repeat: no-repeat
+    background-color: $bg-color
+    &::after
+        display: none
+.swiper-button-prev
+    background-image: url(../../assets/img/icons/arrow-prev_long.svg)
+.swiper-button-next
+    background-image: url(../../assets/img/icons/arrow-next_long.svg)
+
+
+// ================
+
+// Large
+@media (max-width: 1199px) 
+    .testimonials-section
+        padding: $large-padding
+        +large-top-bottom-padding
+        &__header
+            margin-top: 70px
+            padding-left: 60px
+        &__wrapper
+            padding-left: 60px
+        &__descr
+            +normal-text
+    .swiper-container
+        width: 400px
+    .swiper-slide
+        height: 300px
+
+// Medium
+@media (max-width: 991px) 
+    .testimonials-section
+        padding: $medium-padding
+        +large-top-bottom-padding
+        &__header
+            margin-top: 60px
+            //+h2-medium
+        &__descr
+            +small-text
+    .swiper-container
+        width: 320px
+    .swiper-slide
+        height: 250px
+
+// Small
+@media (max-width: 799px)
+    .testimonials-section
+        +small-top-bottom-padding
+        &__header
+            padding-left: 0
+            +h2-medium
+        &__wrapper
+            padding-left: 0
+            +column-start
+        &__slider
+            order: 1
+            margin-top: 30px
+            width: 100%
+            &-navigation
+                width: 20%
+        &__descr
+            //order: 2
+            margin-top: 20px
+            width: 100%
+            +mobile-text
+    .swiper-container
+        width: 400px
+    .swiper-slide
+        height: 300px
+
+// Mobile
+@media (max-width: 575px)
+    .testimonials-section
+        padding: $mobile-padding
+        +mobile-top-bottom-padding
+        &__header
+            margin-top: 50px
+        &__slider
+            &-navigation
+                width: 40%
+    .swiper-container
+        width: 290px
+    .swiper-slide
+        height: 220px

@@ -185,7 +185,6 @@ module.exports = // Экспортируем объект настроек дл�
 
     // Сервер для разработки
     devServer: {
-        //publicPath: path.resolve(__dirname, 'dist'),
         port: 3000,
         open: true
     },
@@ -221,7 +220,13 @@ module.exports = // Экспортируем объект настроек дл�
             },
 
 
-            // SASS / CSS
+            // CSS
+            {
+                test: /\.css$/,
+                use: cssLoaders(),
+            },
+
+            // SASS 
             {
                 test: /\.s[ac]ss$/, 
                 use: cssLoaders({
@@ -236,7 +241,25 @@ module.exports = // Экспортируем объект настроек дл�
             // Чтобы не грузить все файлы и пути для HTML вручную (img..) - используем html-loader
             {
                 test: /\.html$/,
-                loader: 'html-loader',
+                use: {
+                    loader: 'html-loader',
+                    options: {
+                        attributes: {
+                            list: [
+                                {
+                                    tag: 'img',
+                                    attribute: 'src',
+                                    type: 'src',
+                                },
+                                {
+                                    tag: 'img',
+                                    attribute: 'data-src',
+                                    type: 'src',
+                                },
+                            ],
+                        },                        
+                    }
+                },
             },
 
 
