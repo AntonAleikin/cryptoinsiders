@@ -1,0 +1,191 @@
+.services-section
+    +basic-section
+    letter-spacing: 0.5px
+    &__header
+        margin-top: 95px
+        padding-left: 70px
+        +h2-extra
+        color: $main-color
+    &__services
+        margin-top: 95px
+        padding-left: 70px
+        width: 100%
+        +center-start
+
+=dropdown-activator
+    content: ''
+    display: block
+    height: 1px
+    width: 20px
+    background-color: $bg-color
+    position: absolute
+    top: 50%
+    left: 50%
+
+.dropdown
+    &:first-child
+        margin-right: 40px
+    position: relative
+    width: 490px
+    border-top: 1px solid $main-color
+    border-bottom: 1px solid $main-color
+    &-main
+        padding-top: 20px 
+        width: inherit
+        height: 200px
+        +center-start
+        &__header
+            +center
+            &-icon
+                height: 60px
+            &-text
+                width: 370px
+                +large-text
+                font-weight: 700
+                text-align: center
+                color: $main-color
+    &-activator
+        width: 40px
+        height: 40px
+        border-radius: 100%
+        background-color: $main-color
+        cursor: pointer
+
+        position: absolute
+        bottom: 15px
+        right: 15px
+        &::before
+            +dropdown-activator
+            transform: translate(-50%, -50%)
+        &::after
+            +dropdown-activator
+            transform: translate(-50%, -50%) rotate(90deg)
+            transition: transform 0.6s ease
+        &_active
+            &::after 
+                transform: translate(-50%, -50%) rotate(180deg)
+    &-wrapper
+        position: relative
+        width: inherit
+        height: 0
+        overflow-y: hidden
+        overflow-x: hidden
+    &-inner
+        padding: 0 20px 40px 20px
+        width: 90%
+        //text-align: justify
+        +normal-text
+        color: white
+        +center
+        position: absolute
+        top: 0
+        left: 0
+
+// ===================
+
+// Large
+@media (max-width: 1279px) 
+    .services-section
+        padding: $large-padding
+        +large-top-bottom-padding
+        &__header
+            margin-top: 70px
+            padding-left: 60px
+        &__services
+            margin-top: 70px
+            padding-left: 60px
+    .dropdown
+        &:first-child
+            margin-right: 30px
+        width: 390px
+        &-main
+            padding-top: 20px 
+            height: 160px
+            &__header
+                &-icon
+                    height: 50px
+                &-text
+                    width: 300px
+                    +medium-text
+        &-activator
+            bottom: 10px
+            right: 10px
+        &-inner
+            +small-text
+
+// Medium
+@media (max-width: 991px) 
+    .services-section
+        padding: $medium-padding
+        +large-top-bottom-padding
+        &__header
+            margin-top: 60px
+        &__services
+            margin-top: 60px
+    .dropdown
+        &:first-child
+            margin-right: 20px
+        width: 310px
+        &-main
+            padding-top: 10px 
+            height: 130px
+            &__header
+                &-icon
+                    height: 40px
+                &-text
+                    width: 240px
+                    +small-text
+        &-activator
+            width: 30px
+            height: 30px
+            &::before
+                width: 15px
+            &::after
+                width: 15px
+        &-inner
+            padding: 0 0 40px 15px
+            +mobile-text
+
+// Small
+@media (max-width: 799px)
+    .services-section
+        +small-top-bottom-padding
+        &__header
+            margin-top: 30px
+            padding-left: 0
+            +h2-medium
+        &__services
+            padding-left: 0
+            +column-center-start
+    .dropdown
+        &:first-child
+            margin-right: 0
+            border-top: 1px solid $main-color
+        width: 390px
+        border-top: 0px 
+        &-main
+            padding-top: 40px
+            height: 160px
+            &__header
+                &-text
+                    width: 270px
+    
+// Mobile
+@media (max-width: 575px)
+    .services-section
+        padding: $mobile-padding
+        +mobile-top-bottom-padding
+        &__services
+            margin-top: 40px
+    .dropdown
+        &:first-child
+            margin-bottom: 0px
+        width: 280px
+        &-main
+            padding-top: 30px
+            &__header
+                &-icon
+                    height: 30px
+                &-text
+                    width: 220px
+                    +mobile-text

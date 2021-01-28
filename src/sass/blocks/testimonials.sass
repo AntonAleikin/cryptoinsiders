@@ -43,6 +43,9 @@
     height: 370px
     +center
 
+.swiper-zoom-container
+    height: 100%
+
 .swiper-pagination
     position: static
     margin: 0
@@ -73,7 +76,7 @@
 // ================
 
 // Large
-@media (max-width: 1199px) 
+@media (max-width: 1279px) 
     .testimonials-section
         padding: $large-padding
         +large-top-bottom-padding
@@ -96,7 +99,6 @@
         +large-top-bottom-padding
         &__header
             margin-top: 60px
-            //+h2-medium
         &__descr
             +small-text
     .swiper-container
@@ -109,6 +111,7 @@
     .testimonials-section
         +small-top-bottom-padding
         &__header
+            margin-top: 30px
             padding-left: 0
             +h2-medium
         &__wrapper
@@ -135,8 +138,6 @@
     .testimonials-section
         padding: $mobile-padding
         +mobile-top-bottom-padding
-        &__header
-            margin-top: 50px
         &__slider
             &-navigation
                 width: 40%

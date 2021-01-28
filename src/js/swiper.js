@@ -1,5 +1,5 @@
-import Swiper, {Navigation , Pagination, Lazy} from 'swiper';
-Swiper.use([Navigation, Pagination, Lazy]);
+import Swiper, {Navigation , Pagination, Lazy, Zoom} from 'swiper';
+Swiper.use([Navigation, Pagination, Lazy, Zoom]);
 
 const swiper = new Swiper('.swiper-container', {
 
@@ -19,5 +19,9 @@ const swiper = new Swiper('.swiper-container', {
     lazy: {
         loadPrevNext: true,
         loadPrevNextAmount: 2,
+    },
+
+    zoom: {
+        maxRatio: 1.5,  
     },
 });

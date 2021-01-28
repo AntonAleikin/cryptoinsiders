@@ -35,27 +35,23 @@ const smoothScroll = () =>
         }
     }
 
-    if (window.matchMedia("(min-width: 768px)").matches)
+    if (window.matchMedia("(min-width: 800px)").matches) 
     {
         const links = document.querySelectorAll('[href^="#"]');
-    
-        links.forEach(link =>
-        {
-            link.addEventListener("click", function(e) 
-            {
+
+        links.forEach(link => {
+            link.addEventListener('click', function(e) {
                 e.preventDefault();
-    
                 scroll(this.hash, 0.6);
             });
         });
     }
 
-    if (window.matchMedia("(max-width: 575px)").matches)
+    if (window.matchMedia("(max-width: 799px)").matches)
     {
         const link = document.querySelector('.home-section__button-link');
 
-        link.addEventListener("click", function (e) 
-        {
+        link.addEventListener("click", function (e) {
             e.preventDefault();
             scroll(this.hash, 0.6);
         });
