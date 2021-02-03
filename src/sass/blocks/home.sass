@@ -59,9 +59,10 @@
         background-image: linear-gradient(to right top, #f8b62a, #fabc41, #fcc255, #fec867, #ffce78)
         +center
         cursor: pointer
-        &:hover
-            background-image: linear-gradient(to left, #F8B62A, #F8B62A)
-            box-shadow: 0 0 8px 2px black
+        &-hover
+            &:hover
+                background-image: linear-gradient(to left, #F8B62A, #F8B62A)
+                box-shadow: 0 0 8px 2px black
         &-link
             padding: 10px
             text-decoration: none

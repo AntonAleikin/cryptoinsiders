@@ -2,15 +2,25 @@
 =center
     display: flex
     justify-content: center
-    align-items: center   
+    align-items: center 
+=center-start
+    display: flex
+    justify-content: center
+    align-items: flex-start 
+=start-center
+    display: flex
+    justify-content: flex-start
+    align-items: center
+
 =between-center
     display: flex
     justify-content: space-between
     align-items: center
-=center-start
+=between-start
     display: flex
-    justify-content: center
+    justify-content: space-between
     align-items: flex-start
+    
 =column-center
     display: flex
     flex-direction: column
@@ -27,6 +37,14 @@
     align-items: center
     justify-content: flex-start
 
+
+// Logo-text
+=logo-text
+    font-family: Gotham Pro, sans-serif
+    font-weight: 600
+    color: $logo-text-color 
+    text-decoration: none
+    +start-center
 
 
 // Section basic setup
@@ -85,3 +103,6 @@
 =mobile-text
     font-size: $mobile-text
     line-height: $mobile-text-line
+=small-mobile-text
+    font-size: $small-mobile-text
+    line-height: $small-mobile-text-line

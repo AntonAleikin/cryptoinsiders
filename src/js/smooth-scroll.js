@@ -42,7 +42,7 @@ const smoothScroll = () =>
         links.forEach(link => {
             link.addEventListener('click', function(e) {
                 e.preventDefault();
-                scroll(this.hash, 0.6);
+                scroll(this.hash, 0.7);
             });
         });
     }
@@ -53,7 +53,7 @@ const smoothScroll = () =>
 
         link.addEventListener("click", function (e) {
             e.preventDefault();
-            scroll(this.hash, 0.6);
+            scroll(this.hash, 0.7);
         });
     }
 };

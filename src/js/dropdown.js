@@ -1,122 +1,102 @@
-const dropDown = (initialElement) => 
-{
-    function getActivator() {
-        return initialElement + '-activator';
-    }
-
-    function getWrapper() {
-        return initialElement + '-wrapper';
-    }
-
-    function getElements(string) {
-        return document.querySelectorAll(string);
-    }
-
-    function getClassName(className) {
-        return className.replace(/[.]/, '');
-    }
-
-    function activeClassName(className) {
-        return className.replace(/[.]/, '') + '_active';
-    }
-
-    function getHeight(element) {
-        return window.getComputedStyle(element).height;
-    }
-
-    getElements(initialElement).forEach((item, index) => {
-        item.dataset.dropDownId = index;
-    });
-
-    getElements(getActivator()).forEach((item, index) => {
-        item.dataset.dropDownId = index;
-    });
-
-    getElements(getWrapper()).forEach((item, index) => {
-        item.dataset.dropDownId = index;
-    });
-
-    // Добавляем Hover, который меняет фон активатору
-    if(window.matchMedia('(min-width: 800px)').matches) {
-
-        getElements(getActivator()).forEach(activator => {
-            activator.addEventListener('mouseenter', () => {
-
-                getElements(`[data-drop-down-id="${activator.dataset.dropDownId}"]`).forEach(dropdown => {
-                    if(
-                        dropdown.classList.contains(getClassName(initialElement)) && 
-                        !dropdown.classList.contains(activeClassName(initialElement))
-                    ) {
-                        dropdown.style.transition = 'background-color 0.6s ease';
-                        dropdown.style.backgroundColor = '#212228';
-                    }                  
-                });
+const dropDown = () => {
+    class DropdownEvent {
+        constructor() {
+            this.observers = [];
+        }
+        subscribe(observer) {
+            this.observers.push(observer);
+        }
+        unsubscribeALL() {
+            this.observers = [];
+        }
+        fire(state) {
+            this.observers.forEach(observer => {
+                observer.update(state);
             });
-            activator.addEventListener('mouseleave', () => {
-
-                getElements(`[data-drop-down-id="${activator.dataset.dropDownId}"]`).forEach(dropdown => {
-                    if(
-                        dropdown.classList.contains(getClassName(initialElement)) && 
-                        !dropdown.classList.contains(activeClassName(initialElement))
-                    ) {
-                        dropdown.style.transition = 'background-color 0.6s ease';
-                        dropdown.style.backgroundColor = '#1a1b20';
-                    }                  
-                });
-            });
-        });
+        }
+    }
+    
+    class Dropdown {
+        constructor(element) {
+            this.parent = element;
+            this.main = element.querySelector('.dropdown-main');
+            this.wrapper = element.querySelector('.dropdown-wrapper');
+            this.activator = element.querySelector('.dropdown-activator');
+        } 
     }
 
-    getElements(getActivator()).forEach(activator => {
-
-        activator.addEventListener('click', () => {
-
-            if(!activator.classList.contains(activeClassName(getActivator()))) {
-                activator.style.transition = 'background-color 0.6s ease';
-                activator.style.backgroundColor = 'white';
-                activator.classList.add(activeClassName(getActivator()));
-            } 
-            else if(activator.classList.contains(activeClassName(getActivator()))) {
-                activator.style.backgroundColor = '#F8B62A';
-                activator.classList.remove(activeClassName(getActivator()));
+    class DropdownParentObserver extends Dropdown{
+        update(state) {
+            switch(state) {
+                case 'ACTIVE':
+                    this.parent.classList.add('dropdown_active');
+                    break;
+                case 'INACTIVE':
+                    this.parent.classList.remove('dropdown_active');
             }
+        }
+    }
 
-            getElements(`[data-drop-down-id="${activator.dataset.dropDownId}"]`).forEach(wrapper => {  
-                if(
-                    wrapper.classList.contains(getClassName(getWrapper())) &&
-                    !wrapper.classList.contains(activeClassName(getWrapper()))
-                ) {
-                    wrapper.style.transition = 'height 0.6s ease';
-                    wrapper.style.height = getHeight(wrapper.firstElementChild);
-                    wrapper.classList.add(activeClassName(getWrapper()));
-                } 
-                else if(
-                    wrapper.classList.contains(getClassName(getWrapper())) &&
-                    wrapper.classList.contains(activeClassName(getWrapper()))
-                ) {
-                    wrapper.style.height = '0px';
-                    wrapper.classList.remove(activeClassName(getWrapper()));
-                }
-            });
-            
-            getElements(`[data-drop-down-id="${activator.dataset.dropDownId}"]`).forEach(dropdown => {
-                if(
-                    dropdown.classList.contains(getClassName(initialElement)) && 
-                    !dropdown.classList.contains(activeClassName(initialElement))
-                ) {
-                    dropdown.style.transition = 'background-color 0.6s ease';
-                    dropdown.style.backgroundColor = '#212228';
-                    dropdown.classList.add(activeClassName(initialElement));
-                }
-                else if(
-                    dropdown.classList.contains(getClassName(initialElement)) &&
-                    dropdown.classList.contains(activeClassName(initialElement))
-                ) {
-                    dropdown.style.backgroundColor = '#1a1b20';
-                    dropdown.classList.remove(activeClassName(initialElement));
-                }
-            });
-        });
+    class DropdownWrapperObserver extends Dropdown {
+        update(state) {
+            switch(state) {
+                case 'ACTIVE':
+                    this.wrapper.style.transition = 'height 0.6s ease';
+                    this.wrapper.style.height = window.getComputedStyle(this.wrapper.firstElementChild).height;
+                    break;
+                case 'INACTIVE':
+                    this.wrapper.style.height = 0;
+            }
+        }
+    }
+    
+    class DropdownActivatorObserver extends Dropdown {
+        update(state) {
+            switch(state) {
+                case 'ACTIVE':
+                    this.activator.classList.add('dropdown-activator_active');
+                    break;
+                case 'INACTIVE':
+                    this.activator.classList.remove('dropdown-activator_active');                      
+            }
+        }
+    }
+    
+    const stream$ = new DropdownEvent();
+    
+    const dropdowns = document.querySelectorAll('.dropdown');
+    dropdowns.forEach(dropdown => {
+        
+        const parentObserver = new DropdownParentObserver(dropdown);
+        const activatorObserver = new DropdownActivatorObserver(dropdown);
+        const wrapperObserver = new DropdownWrapperObserver(dropdown);
+
+        const main = dropdown.querySelector('.dropdown-main');
+        const activator = dropdown.querySelector('.dropdown-activator');
+
+        function activate() {
+            stream$.subscribe(parentObserver);
+            stream$.subscribe(activatorObserver);
+            stream$.subscribe(wrapperObserver);
+            stream$.fire('ACTIVE');
+            stream$.unsubscribeALL();           
+            main.removeEventListener('click', activate, {once: true});
+            activator.removeEventListener('click', activate, {once: true});
+            activator.addEventListener('click', inactivate, {once: true});
+        }
+
+        function inactivate() {
+            stream$.subscribe(parentObserver);
+            stream$.subscribe(activatorObserver);
+            stream$.subscribe(wrapperObserver);
+            stream$.fire('INACTIVE');
+            stream$.unsubscribeALL();
+            main.addEventListener('click', activate, {once: true});
+            activator.addEventListener('click', activate, {once: true});
+        }
+
+        main.addEventListener('click', activate, {once: true});
+        activator.addEventListener('click', activate, {once: true});
     });
 };
 export default dropDown;

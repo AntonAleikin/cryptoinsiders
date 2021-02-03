@@ -13,7 +13,7 @@ $hamburger-item-color: white
     width: 100%
     position: fixed
     top: 0
-    z-index: 5
+    z-index: 20
     background-color: $nav-bg-color
 
 .nav 
@@ -24,12 +24,8 @@ $hamburger-item-color: white
     +between-center
     &__logo
         &-link
-            font-family: Gotham Pro, sans-serif
+            +logo-text
             font-size: 26px
-            font-weight: 600
-            color: $logo-text-color // Цвет лого
-            text-decoration: none
-            +center
         &-img
             height: 80px
 

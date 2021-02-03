@@ -63,11 +63,10 @@
             <div class="nav__links">
                 <div class="nav__links-logo">
                     <a class="nav__links-logo-link" href="/">Crypto insider signals</a>
-                    <img class="nav__links-close" src="assets/img/icons/exit-icon.svg" alt="exit icon"></img>
+                    <img class="nav__links-close" src="assets/img/icons/exit-icon.svg" alt="exit icon">
                 </div>
                 
                 <div class="nav__links-wrapper">
-                    <!-- <a class="nav__links-item" href="#home">Главная</a> -->
                     <a class="nav__links-item" href="#about">О нас</a>
                     <a class="nav__links-item" href="#services">Услуги</a>
                     <a class="nav__links-item" href="#testimonials">Отзывы</a>
@@ -116,11 +115,13 @@
                     <h1 class="home-section__promo-slogan">Активный, а не пассивный доход</h1>
                     
                     <h2 class="home-section__promo-text">
-                        Успешные и актуальные стратегии торговли криптовалютами от первоисточников 
+                        Коллекция лучших VIP сигналов для торговли на рынке криптовалют.
+
+                        <!-- Успешные и актуальные стратегии торговли криптовалютами от первоисточников --> 
                     </h2>
         
                     <!-- More button -->
-                    <div class="home-section__button">
+                    <div class="home-section__button home-section__button-hover">
                         <a class="home-section__button-link" href="#about">
                             <div class="home-section__button-text">Подробнее</div>
         
@@ -175,30 +176,35 @@
         </div>
     </section>
 
-
+    <!-- Services -->
     <section id="services" class="services-section">
 
         <h2 class="services-section__header">Что мы предлагаем?</h2>
 
         <div class="services-section__services">
 
-            <div class="dropdown">
+            <div class="dropdown dropdown-hover">
                 <div class="dropdown-main">
                     <div class="dropdown-main__header">
                         <img class="dropdown-main__header-icon" src="assets/img/icons/signals-chart.svg" alt="Upward graphic">
-                        <div class="dropdown-main__header-text">Подборку лучших сигналов крипторынка</div>
-                    </div>
-                    
+                        <div class="dropdown-main__header-text">Лучшие VIP сигналы крипторынка</div>
+                    </div>  
                 </div>
                 <div class="dropdown-wrapper">
                     <div class="dropdown-inner">
-                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
+                        <div class="dropdown-inner__text">
+                            Сейчас на рынке торгуют тысячами цифровых валют. <br><br> 
+                            Оценки в отношении различных инструментов со стороны экспертов могут различаться диаметрально. <br><br>
+                            Принимать решения в таких условиях бывает чрезвычайно сложно (особенно новичку). <br><br>
+                            Поэтому, имея в доступе около 25 ТОПовых VIP каналов СНГ и зарубежных криптоинсайдеров - вы точно не промахнетесь! <br><br>
+                        </div>
+                        <div class="dropdown-inner__details">Подробнее</div>
                     </div>
                 </div>
                 <div class="dropdown-activator"></div>
             </div>
     
-            <div class="dropdown">
+            <div class="dropdown dropdown-hover">
                 <div class="dropdown-main">
                     <div class="dropdown-main__header">
                         <img class="dropdown-main__header-icon" src="assets/img/icons/promotion.svg" alt="Upward graphic">
@@ -207,7 +213,15 @@
                 </div>
                 <div class="dropdown-wrapper">
                     <div class="dropdown-inner">
-                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
+                        <div class="dropdown-inner__text">
+                            Наша медиа площадка поможет сделать ваш проект ещё успешней. <br><br>
+                            Аудитория наших каналов - реальная, высококонцентрированная целевая в своем сегменте, которая привлекалась исключительно рекламой и взаимопиаром, по этому готовьтесь отбиваться от потенциальных клиентов :) <br><br>
+                            Имеется большое количество успешных кейсов и сотни отзывов довольных и благодарных клиентов. Нас знают и любят. <br><br>
+                        </div>
+                        <div class="dropdown-inner__details">Подробнее</div>
+                        <!-- За актуальными прайсом с условиями и ценами на размещение обращайтесь к менеджеру или же пишите на почту. Контакты находятся в разделе «Для связи». -->
+
+                        <!-- Выберите удобный способ для связи с менеджером, чтобы задать все интерисующие вас вопросы и учточнить цены. --> 
                     </div>
                 </div>  
                 <div class="dropdown-activator"></div>         
@@ -216,8 +230,26 @@
     </section>
 
 
-    <!-- testimonials УБРАТЬ ПАДДИНГ!-->
-    <section id="testimonials" class="testimonials-section" style="padding-bottom: 50px;">
+    <!-- Модальное окно для связи -->
+    <div class="contacts-overlay">
+        
+        <div class="contacts-overlay__text">Выберите удобный  способ, для связи с менеджером:</div>
+
+        <div class="contacts-overlay__wrapper">
+
+            <a class="contacts-overlay__contact" href="https://t.me/insidemanager">Написать в Telegram</a>
+
+            <a class="contacts-overlay__contact" href="mailto:info@cryptoinsidersignals.com">Написать на почту</a>
+        </div>
+
+        <div class="contacts-overlay__close">
+            <img class="contacts-overlay__close-img" src="assets/img/icons/exit-icon.svg">
+        </div>
+    </div>
+
+
+    <!-- testimonials -->
+    <section id="testimonials" class="testimonials-section">
         
         <h2 class="testimonials-section__header">Отзывы</h2>
 
@@ -292,5 +324,50 @@
             </div>
         </div>
     </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer__wrapper">
+
+            <div class="footer__logo">
+                <a href="/" class="footer__logo-link">Crypto insider signals</a>
+                <div class="footer__logo-descr">
+                    Медиа площадка, которая поможет вашему бизнесу расти в Telegram. А также коллекция лучших сигналов для торговли на рынке криптовалют.
+                </div>
+
+                <div class="footer__developers">
+                    Сайт разработал <a class="footer__developers-link" href="#">Антон Алейкин</a>
+                </div>
+            </div>
+
+            <div class="footer__columns">
+                <div class="footer__column">
+                    <div class="footer__header">Для связи</div>
+                    <div class="footer__items">
+                        <a class="footer__item" href="">Insider manager</a>
+                        <a class="footer__item" href="">info@cryptoinsidersignals.com</a>
+                    </div>
+                </div>
+        
+                <div class="footer__column">
+                    <div class="footer__header">Наши Telegram каналы</div>
+                    <div class="footer__items">
+                        <a class="footer__item" href="">Crypto insider signals</a>
+                        <a class="footer__item" href="">Crypto Hais</a>
+                        <a class="footer__item" href="">Yovio Trade</a>
+                        <a class="footer__item" href="">Crypto Don Alt</a>
+                        <a class="footer__item" href="">Crypto Give</a>
+                    </div>
+                </div>
+        
+                <div class="footer__column">
+                    <div class="footer__header">Instagram</div>
+                    <div class="footer__items">
+                        <a class="footer__item" href="">Crypto insider signals</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>
