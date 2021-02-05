@@ -1,28 +1,39 @@
 .contacts-overlay
+    display: none
     height: 100vh
     width: 100%
     background-color: $bg-color //rgba(26, 27, 32, 0.9)
     font-family: $main-font
     letter-spacing: 0.5px
-    +column-center
+    +center
 
     position: fixed
     z-index: 30
     top: 0
     left: 0
+
     visibility: hidden
-    transition: visibility 0.6s ease
-    
+    opacity: 0
+    transition: visibility 0.3s ease, opacity 0.3s ease
+    &_active
+        display: flex
+        visibility: visible
+        opacity: 1
+        touch-action: none
+        -ms-touch-action: none
     &__text
         +large-text
         font-weight: 700
         color: $main-color
     &__wrapper
+        +column-center-start
+    &__contacts
         margin-top: 60px
         +column-center-start
     &__contact
-        display: block
         margin-top: 30px
+        &:first-child
+            margin-top: 0
         height: 90px
         width: 500px
         border-top: 1px solid $main-color
@@ -39,8 +50,55 @@
             background-color:#212228
     &__close
         position: absolute
-        top: 30px
+        top: 20px
         right: 30px
         cursor: pointer
         &-img
             height: 30px
+
+// =================
+
+// Medium
+@media (max-width: 991px) 
+    .contacts-overlay
+        &__text
+            +medium-text
+        &__contacts
+            margin-top: 40px
+        &__contact
+            margin-top: 30px
+            height: 80px
+            width: 400px
+            +normal-text
+
+// Small
+@media (max-width: 799px)
+    .contacts-overlay
+        &__text
+            +normal-text
+        &__contact
+            margin-top: 20px
+            height: 70px
+            +small-text
+        &__close
+            top: 15px
+            right: 20px
+            &-img
+                height: 25px
+
+// Mobile
+@media (max-width: 575px)
+    .contacts-overlay
+        &__text
+            +small-text
+        &__wrapper
+            padding: $mobile-padding
+            width: 100%
+        &__contacts
+            //margin-top: 30px
+            width: 100%
+        &__contact
+            width: 100%
+            +mobile-text
+        &__close
+            right: 15px

@@ -1,3 +1,5 @@
+import noScroll from '@js/no-scroll';
+
 const hamburger = ({hamburger, menu, close, links}) => 
 {
     class HamburgerEvent {
@@ -26,11 +28,11 @@ const hamburger = ({hamburger, menu, close, links}) =>
             switch(state) {
                 case 'ACTIVE':
                     this.element.classList.add(this.className.replace(/[.]/, '') + '_active');
-                    document.documentElement.style.overflow = 'hidden';
+                    noScroll('NOSCROLL');
                     break;
                 case 'INACTIVE':
                     this.element.classList.remove(this.className.replace(/[.]/, '') + '_active');
-                    document.documentElement.style.overflow = 'auto';
+                    noScroll('SCROLL');
             }
         }
     }
