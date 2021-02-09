@@ -1,14 +1,9 @@
 .services-section
     +basic-section
-    letter-spacing: 0.5px
     &__header
-        margin-top: 95px
-        padding-left: 70px
-        +h2-extra
+        +h2-header-extra
         color: $main-color
     &__services
-        margin-top: 95px
-        padding-left: 70px
         width: 100%
         +center-start
 
@@ -99,14 +94,9 @@ $active-color: #212228
 // Large
 @media (max-width: 1279px) 
     .services-section
-        padding: $large-padding
-        +large-top-bottom-padding
+        +basic-section-large
         &__header
-            margin-top: 70px
-            padding-left: 60px
-        &__services
-            margin-top: 70px
-            padding-left: 60px
+            +h2-header-large
     .dropdown
         &:first-child
             margin-right: 30px
@@ -129,14 +119,9 @@ $active-color: #212228
 // Medium
 @media (max-width: 991px) 
     .services-section
-        padding: $medium-padding
-        +large-top-bottom-padding
+        +basic-section-medium
         &__header
-            margin-top: 60px
-            padding-left: 50px
-        &__services
-            margin-top: 60px
-            padding-left: 50px
+            +h2-header-medium
     .dropdown
         &:first-child
             margin-right: 20px
@@ -164,13 +149,10 @@ $active-color: #212228
 // Small
 @media (max-width: 799px)
     .services-section
-        +small-top-bottom-padding
+        +basic-section-small
         &__header
-            margin-top: 30px
-            padding-left: 0
-            +h2-medium
+            +h2-header-small
         &__services
-            padding-left: 0
             +column-center-start
     .dropdown
         &:first-child
@@ -188,10 +170,8 @@ $active-color: #212228
 // Mobile
 @media (max-width: 575px)
     .services-section
-        padding: $mobile-padding
-        +mobile-top-bottom-padding
-        &__services
-            margin-top: 40px
+        &__header
+            +h2-header-mobile
     .dropdown
         &:first-child
             margin-bottom: 0px

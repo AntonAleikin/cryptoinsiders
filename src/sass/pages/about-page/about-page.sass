@@ -1,0 +1,46 @@
+.about-page
+    +page-setup
+    &__content
+        +page-setup
+        padding-left: 70px
+        padding-bottom: 40px
+    &__header
+        font-family: Gotham Pro
+        +page-header-extra
+        color: $main-color
+
+// =============
+
+// Large
+@media (max-width: 1279px) 
+    .about-page
+        &__content
+            padding-left: 60px
+            padding-bottom: 30px
+        &__header
+            +page-header-large
+
+// Medium
+@media (max-width: 991px) 
+    .about-page
+        &__content
+            padding-left: 50px
+            padding-bottom: 20px
+        &__header
+            +page-header-medium
+    
+// Small
+@media (max-width: 799px)
+    .about-page
+        &__content
+            padding-left: 0
+        &__header
+            +page-header-small
+
+// Mobile
+@media (max-width: 575px)
+    .about-page
+        &__content
+            padding-bottom: 0
+        &__header
+            +page-header-mobile

@@ -1,0 +1,32 @@
+.page-content
+    margin: 0 auto
+    padding: $extra-large-padding
+    padding-top: 100px // Высота хедера
+    width: 100%
+    height: auto
+    position: relative
+
+// ================
+
+// Large
+@media (max-width: 1279px)
+    .page-content
+        padding: $large-padding
+        padding-top: 90px
+
+// Medium
+@media (max-width: 991px) 
+    .page-content
+        padding: $medium-padding
+        padding-top: 90px
+
+// Small
+@media (max-width: 799px)
+    .page-content
+        padding-top: 80px
+
+// Mobile
+@media (max-width: 575px)
+    .page-content
+        padding: $mobile-padding
+        padding-top: 70px

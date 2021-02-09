@@ -62,7 +62,7 @@ const hamburger = ({hamburger, menu, close, links}) =>
             link.addEventListener('click', (e) => {
                 e.preventDefault();
     
-                document.documentElement.style.overflow = 'auto';
+                noScroll('SCROLL');
                 stream$.subscribe(new HamburgerObserver(hamburger));
                 stream$.subscribe(new HamburgerObserver(menu));
                 stream$.fire('INACTIVE');

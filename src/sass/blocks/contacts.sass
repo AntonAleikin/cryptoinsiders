@@ -1,0 +1,65 @@
+.contacts
+    +basic-section
+    &__header
+        +h2-header-extra
+        color: $main-color
+    &__contacts
+        width: 100%
+        +column-center-start
+    &__contact
+        margin-top: 30px
+        &:first-child
+            margin-top: 0
+        height: 90px
+        width: 500px
+        border-top: 1px solid $main-color
+        border-bottom: 1px solid $main-color
+        +medium-text
+        color: $main-color
+        text-decoration: none
+        +center
+        cursor: pointer
+        transition: color 0.3s ease
+        transition: background-color 0.3s ease
+        &:hover
+            color: $main-color
+            background-color:#212228
+
+// ================
+
+// Large
+@media (max-width: 1279px) 
+    .contacts
+        +basic-section-large
+        &__header
+            +h2-header-large
+
+
+// Medium
+@media (max-width: 991px) 
+    .contacts
+        +basic-section-medium
+        &__header
+            +h2-header-medium
+        &__contact
+            margin-top: 30px
+            height: 80px
+            width: 400px
+            +normal-text
+
+// Small
+@media (max-width: 799px)
+    .contacts
+        +basic-section-small
+        &__header
+            +h2-header-small
+
+// Mobile
+@media (max-width: 575px)
+    .contacts
+        +basic-section-small
+        &__header
+            +h2-header-mobile
+        &__contact
+            width: 100%
+            +mobile-text

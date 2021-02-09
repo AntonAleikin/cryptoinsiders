@@ -1,0 +1,66 @@
+.main-page
+    +page-setup
+    &__content
+        +page-setup
+        padding-top: 100px // Для хедера, после скролла с хиро
+        padding-left: 70px
+        padding-bottom: 40px
+    &__about
+        font-family: $main-font
+        width: 100%
+        background-color: $bg-color
+        letter-spacing: 0.5px
+        &-logo
+            +large-text
+            font-weight: 500
+            color: $main-color
+        &-text
+            width: 100%
+            +medium-text
+            font-weight: 400
+            color: white
+
+// Large
+@media (max-width: 1279px)
+    .main-page
+        &__content
+            padding-top: 90px
+            padding-left: 60px
+            padding-bottom: 30px
+        &__about
+            &-logo
+                +medium-text
+            &-text
+                +normal-text
+
+// Medium
+@media (max-width: 991px)
+    .main-page
+        &__content
+            padding-top: 90px
+            padding-left: 50px
+            padding-bottom: 20px
+        &__about
+            &-logo
+                +normal-text
+            &-text
+                +small-text
+
+// Small
+@media (max-width: 799px)
+    .main-page
+        &__content
+            padding-top: 80px
+            padding-left: 0
+        &__about
+            &-logo
+                +small-text
+            &-text
+                +mobile-text
+
+// Mobile
+@media (max-width: 575px)
+    .main-page
+        &__content
+            padding-top: 70px
+            padding-bottom: 0

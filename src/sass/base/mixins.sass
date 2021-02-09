@@ -47,62 +47,106 @@
     +start-center
 
 
+// Setup for any page
+=page-setup
+    margin: 0 auto
+    padding: 0
+    width: 100%
+    border: 0
+
+
 // Section basic setup
 =basic-section
     font-family: $main-font
-    padding: $extra-large-padding
-    +extra-large-top-bottom-padding
+    letter-spacing: 0.5px
+    margin-bottom: 130px
     width: 100%
     height: auto
     background-color: $bg-color
     +column-start
-
-
-// Section padding
-=extra-large-top-bottom-padding
-    padding-top: $extra-large-padding-top 
-    padding-bottom: $extra-large-padding-bottom
-=large-top-bottom-padding
-    padding-top: $large-padding-top
-    padding-bottom: $large-padding-bottom
-=small-top-bottom-padding
-    padding-top: $small-padding-top
-    padding-bottom: $small-padding-bottom
-=mobile-top-bottom-padding
-    padding-top: $mobile-padding-top
-    padding-bottom: $mobile-padding-bottom
+=basic-section-large
+    margin-bottom: 90px
+=basic-section-medium
+    margin-bottom: 70px
+=basic-section-small
+    margin-bottom: 50px
+=basic-section-mobile
+    margin-bottom: 30px
 
 
 
-// Font-headers
-=h2-extra
-    font-size: $h2-extra
-    line-height: $h2-extra-line
-=h2-medium
-    font-size: $h2-medium
-    line-height: $h2-medium-line
-=h2-mobile
-    font-size: $h2-mobile
-    line-height: $h2-mobile-line
+// Page header (h1)
+=page-header-extra
+    margin: 0
+    padding: 0 
+    font-size: 42px
+    font-weight: bold
+    line-height: 50px
+=page-header-large
+    margin: 0
+    padding: 0
+    font-size: 38px
+    font-weight: bold
+    line-height: 46px
+=page-header-medium
+    margin: 0
+    padding: 0
+    font-size: 34px
+    font-weight: bold
+    line-height: 42px
+=page-header-small
+    margin: 0
+    padding: 0
+    font-size: 30px
+    font-weight: bold
+    line-height: 38px
+=page-header-mobile
+    margin: 0
+    padding: 0
+    font-size: 26px
+    font-weight: bold
+    line-height: 34px
 
+
+// Page header (h2)
+=h2-header-extra
+    margin-bottom: 95px
+    font-size: 36px
+    font-weight: bold
+=h2-header-large
+    margin-bottom: 80px
+    font-size: 32px
+    font-weight: bold
+=h2-header-medium
+    margin-bottom: 70px
+    font-size: 28px
+    font-weight: bold
+=h2-header-small
+    margin-bottom: 60px
+    font-size: 24px
+    font-weight: bold
+=h2-header-mobile
+    margin-bottom: 40px
+    font-size: 20px
+    font-weight: bold
 
 
 // Font sizes
 =large-text
-    font-size: $large-text
-    line-height: $large-text-line
+    font-size: 22px
+    line-height: 36px
 =medium-text
-    font-size: $medium-text
-    line-height: $medium-text-line
+    font-size: 18px
+    line-height: 32px
 =normal-text
-    font-size: $normal-text
-    line-height: $normal-text-line
+    font-size: 16px
+    line-height: 28px
 =small-text
-    font-size: $small-text
-    line-height: $small-text-line
+    font-size: 14px
+    line-height: 24px
 =mobile-text
-    font-size: $mobile-text
-    line-height: $mobile-text-line
+    font-size: 12px
+    line-height: 20px
 =small-mobile-text
-    font-size: $small-mobile-text
-    line-height: $small-mobile-text-line
+    font-size: 10px
+    line-height: 16px

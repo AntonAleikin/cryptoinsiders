@@ -9,18 +9,18 @@
     transform: translateX(10px) // Половина шарика
     background-color: $main-color
 
-.about-section
+.about
     +basic-section
-    letter-spacing: 0.5px
     
     &__text
-        margin-top: 95px
-        padding-left: 70px
         width: 100%
         +medium-text
         font-weight: 400
         color: white
+        &:last-child
+            margin-top: 60px
 
+        // Использовать для Главной
         &-header 
             +large-text
             font-weight: 500
@@ -28,7 +28,6 @@
 
     &__roadmap
         margin-top: 60px
-        padding-left: 70px
         width: 100%
         height: auto
         display: flex
@@ -70,7 +69,7 @@
             height: 20px
             border-radius: 100%
             background-color: $main-color
-        &-descr
+        &-text
             width: 70%
             +medium-text
             color: white
@@ -83,40 +82,32 @@
 
 // Large
 @media (max-width: 1279px) 
-    .about-section
-        padding: $large-padding
-        +large-top-bottom-padding
+    .about
+        +basic-section-large
         &__text
-            margin-top: 70px
-            padding-left: 60px
             +normal-text
-            &-header 
-                +medium-text
+            &:last-child
+                margin-top: 50px       
         &__roadmap
             margin-top: 50px
-            padding-left: 60px
             &-item
                 padding-top: 50px
             &-date
                 +normal-text
-            &-descr
+            &-text
                 width: 80%
                 +normal-text
 
 // Medium
 @media (max-width: 991px) 
-    .about-section
-        padding: $medium-padding
-        +large-top-bottom-padding
+    .about
+        +basic-section-medium
         &__text
-            margin-top: 60px
-            padding-left: 50px
             +small-text
-            &-header 
-                +normal-text
+            &:last-child
+                margin-top: 40px
         &__roadmap
             margin-top: 40px
-            padding-left: 50px
             &-item
                 padding-top: 40px
             &-date
@@ -127,41 +118,40 @@
             &-round
                 width: 15px
                 height: 15px
-            &-descr
+            &-text
                 width: 80%
                 +small-text
 
 // Small
 @media (max-width: 799px)
-    .about-section
-        +small-top-bottom-padding
+    .about
+        +basic-section-small
         &__text
-            margin-top: 30px
-            padding-left: 0
             +mobile-text
-            &-header 
-                +small-text
         &__roadmap
             padding-left: 0
             &-date
                 justify-content: flex-start
                 +mobile-text
-            &-descr
+            &-text
                 width: 85%
                 +mobile-text
 
 // Mobile
 @media (max-width: 575px)
-    .about-section
-        padding: $mobile-padding
-        +mobile-top-bottom-padding
+    .about
+        &__text
+            &:last-child
+                margin-top: 25px
         &__roadmap
+            margin-top: 25px
             &-item
+                padding-top: 20px
                 flex-direction: column
                 justify-content: flex-start
                 align-items: flex-start
             &-bullet
                 display: none
-            &-descr
-                padding-left: 10px
+            &-text
+                padding-left: 15px
                 width: 100%

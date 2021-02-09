@@ -39,22 +39,26 @@ const smoothScroll = () =>
     {
         const links = document.querySelectorAll('[href^="#"]');
 
-        links.forEach(link => {
-            link.addEventListener('click', function(e) {
-                e.preventDefault();
-                scroll(this.hash, 0.7);
+        if(links) {
+            links.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    scroll(this.hash, 0.7);
+                });
             });
-        });
+        }
     }
 
     if (window.matchMedia("(max-width: 799px)").matches)
     {
-        const link = document.querySelector('.home-section__button-link');
+        const link = document.querySelector('.hero__button-link');
 
-        link.addEventListener("click", function (e) {
-            e.preventDefault();
-            scroll(this.hash, 0.7);
-        });
+        if(link) {
+            link.addEventListener("click", function (e) {
+                e.preventDefault();
+                scroll(this.hash, 0.7);
+            });
+        }
     }
 };
 export default smoothScroll;

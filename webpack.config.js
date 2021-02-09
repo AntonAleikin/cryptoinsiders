@@ -110,6 +110,17 @@ const copyAssets = (from, to = '') =>
     };
 };
 
+const addHtmlPage = (templatePath, filenameStr) => 
+{   
+    return {
+        filename: filenameStr,
+        template: templatePath,
+        minify: {
+            collapseWhitespace: isProd
+        },
+    };
+};
+
 
 const plugins = () => // Тут все наши плагины и их анализ в проде
 {
@@ -120,6 +131,8 @@ const plugins = () => // Тут все наши плагины и их анал�
                 collapseWhitespace: isProd
             },
         }),
+
+        new HTMLWebpackPlugin(addHtmlPage('./about.html', 'about.html')),
 
         new MiniCssExtractPlugin({
             filename: '[name].[contenthash].css'

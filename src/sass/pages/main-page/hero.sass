@@ -1,15 +1,29 @@
-.home-section
-    padding: $extra-large-padding
-    padding-top: 100px
-    height: 100vh
-    min-height: 100vh
+// Font-headers
+$h1-extra: 5.7vh 
+$h1-medium: 5.2vh
+$h1-mobile: 4.7vh
+
+=h2-extra
+    font-size: 3.7vh
+    line-height: 5.7vh
+=h2-medium
+    font-size: 3.2vh
+    line-height: 5.2vh
+=h2-mobile
+    font-size: 2.7vh
+    line-height: 4.7vh
+
+// ===============
+
+.hero
+    height: calc(100vh - 100px)
     width: 100%
     +center
 
     &__bg
         height: 100%
         width: 100%
-        background: url(../../assets/img/home-bg.jpg) center (center / cover) no-repeat
+        background: url(../../../assets/img/home-bg.jpg) center (center / cover) no-repeat
 
     &__promo
         height: 100%
@@ -82,15 +96,12 @@
 
 // Large
 @media (max-width: 1279px) 
-    .home-section
-        padding: $large-padding
-        padding-top: 90px
+    .hero
+        height: calc(100vh - 90px)
 
 // Medium
 @media (max-width: 991px) 
-    .home-section
-        padding: $medium-padding
-        padding-top: 90px
+    .hero
         &__promo
             &-bull
                 padding-right: 10px
@@ -103,11 +114,11 @@
 
 // Small
 @media (max-width: 799px)
-    .home-section
-        padding-top: 80px
+    .hero
+        height: calc(100vh - 80px)
         position: relative
         &__bg
-            background: url(../../assets/img/home-bg-mid.jpg) center (center / cover) no-repeat
+            background: url(../../../assets/img/home-bg-mid.jpg) center (center / cover) no-repeat
         &__promo
             &-bull
                 padding-right: 0
@@ -126,11 +137,10 @@
 
 // Mobile
 @media (max-width: 575px)
-    .home-section
-        padding: $mobile-padding
-        padding-top: 70px
+    .hero
+        height: calc(100vh - 70px)
         &__bg
-            background: url(../../assets/img/home-bg-mobile.jpg) center (center / cover) no-repeat
+            background: url(../../../assets/img/home-bg-mobile.jpg) center (center / cover) no-repeat
         &__promo
             &-bull
                 display: none
