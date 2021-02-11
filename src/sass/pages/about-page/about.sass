@@ -19,14 +19,10 @@
         color: white
         &:last-child
             margin-top: 60px
-
-        // Использовать для Главной
-        &-header 
-            +large-text
-            font-weight: 500
-            color: $main-color
+        
 
     &__roadmap
+        position: relative
         margin-top: 60px
         width: 100%
         height: auto
@@ -129,7 +125,6 @@
         &__text
             +mobile-text
         &__roadmap
-            padding-left: 0
             &-date
                 justify-content: flex-start
                 +mobile-text
@@ -153,5 +148,5 @@
             &-bullet
                 display: none
             &-text
-                padding-left: 15px
+                padding-left: 25px
                 width: 100%

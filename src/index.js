@@ -3,6 +3,7 @@ import '@/sass/index.sass';
 
 // JS
 import noHover from '@js/no-hover';
+import navActive from '@js/nav-active';
 import headerShadow from '@js/header';
 import smoothScroll from '@js/smooth-scroll';
 import hamburger from '@js/hamburger';
@@ -12,6 +13,7 @@ import '@js/swiper';
 
 window.addEventListener("DOMContentLoaded", () =>
 {
+    navActive('nav__links-item');
     noHover();
     headerShadow();
     smoothScroll(); 

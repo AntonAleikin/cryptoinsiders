@@ -2,7 +2,8 @@
 $nav-bg-color: $bg-color
 $logo-text-color: $main-color
 $text-color: #828282
-$hover-color: white
+$hover-color: $main-color
+$active-color: $main-color
 $hamburger-item-color: white
 
 
@@ -49,9 +50,8 @@ $hamburger-item-color: white
                 color: $hover-color
             &:last-child
                 margin-right: 0
-                color: $logo-text-color // Цвет последнего пункта
-                &:hover
-                    color: $hover-color
+            &_active
+                color: $active-color
 
         // Соц-сети для моб
         &-social
@@ -147,10 +147,10 @@ $hamburger-item-color: white
                 width: 100%
                 font-size: 16px
                 border-bottom: 1px solid $text-color
-                &:last-child
-                    border-bottom: 1px solid $main-color
                 &:hover
                     color: $text-color
+                &_active
+                    border-bottom: 1px solid $main-color
             
             // Соц-сети внутри меню
             &-social

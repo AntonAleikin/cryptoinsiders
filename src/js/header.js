@@ -4,7 +4,7 @@ const headerShadow  = () =>
 
     window.addEventListener("scroll", () => 
     {
-        if (window.scrollY >= 10)
+        if (window.scrollY > 1)
         {
             
             if (header.style.boxShadow != '') 
@@ -18,7 +18,7 @@ const headerShadow  = () =>
             }
         }
 
-        if (window.scrollY <= 10 || window.scrollY == 0)
+        if (window.scrollY <= 1 || window.scrollY == 0)
         {
             if (header.style.boxShadow == '') 
             {
