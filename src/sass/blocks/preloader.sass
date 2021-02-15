@@ -1,0 +1,68 @@
+.preloader
+    width: 100%
+    height: 100%
+    background-color: $bg-color
+    position: fixed
+    z-index: 100
+    top: 0
+    lef: 0
+    bottom: 0
+    visibility: visible
+    opacity: 1
+    transition: opacity 1s ease-out, visibility 1s ease-out 
+    +center
+    &__content
+        +center
+        opacity: 1
+        transition: opacity 0.5s ease-out
+        &_hidden
+            opacity: 0
+    &_hidden
+        visibility: hidden
+        opacity: 0  
+
+// Анимация
+@keyframes loading-circles
+    0%
+        transfotm: translateY(0)
+    50%
+        transform: translateY(-20px)
+    100%
+        transform: translateY(0)
+
+=animation-setup
+    animation-name: loading-circles 
+    animation-duration: 0.6s
+    animation-timing-function: ease-in-out
+
+.loading-circle
+    margin-right: 10px
+    &:last-child
+        margin-right: 0
+    width: 35px
+    height: 35px
+    background-color: $main-color
+    border-radius: 100%
+    // Анимация 
+    &:nth-child(1)
+        +animation-setup
+    &:nth-child(2)
+        +animation-setup
+        animation-delay: 0.6s
+    &:nth-child(3)
+        +animation-setup
+        animation-delay: 1.2s
+
+
+// ===============
+
+// Large
+@media (max-width: 1279px)
+    .loading-circle
+        width: 30px
+        height: 30px
+// Medium
+@media (max-width: 991px)
+    .loading-circle
+        width: 25px
+        height: 25px

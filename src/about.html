@@ -42,8 +42,53 @@
     <meta name="theme-color" content="#ffffff">
 </head>
 <body class="body">
-    <div id="page-wrapper">
+    <script>
+        (function(){
+            function newElement(tag, className) {
+                const element = document.createElement(tag);
+                element.classList.add(className);
+                document.body.prepend(element);
+                return element;
+            }
 
+            class Preloader {
+                constructor() {
+                    this.preloader = newElement('div', 'preloader');
+                }
+                setContent(template) {
+                    this.preloader.innerHTML = template;
+                }
+                gatContent () {
+                    return this.content = this.preloader.firstElementChild;
+                }
+                hide() {
+                    setTimeout(() => this.gatContent().classList.add('preloader__content_hidden'), 2200);
+                    setTimeout(() => this.preloader.classList.add('preloader_hidden'), 2800);
+                    setTimeout(() => this.preloader.style.display = 'none', 3000);
+                }
+                setSession() {
+                    sessionStorage.preloader = 'loaded';
+                }
+            }
+
+            if(!sessionStorage.preloader) {
+                const preloader = new Preloader();
+                preloader.setContent(
+                    `
+                        <div class="preloader__content">
+                            <div class="loading-circle"></div>
+                            <div class="loading-circle"></div>
+                            <div class="loading-circle"></div>
+                        </div>
+                    `
+                );
+                preloader.hide();
+                preloader.setSession();
+            }
+        }())
+    </script>
+
+    <div id="page-wrapper">
         <!-- Хедер -->
         <header class="header"> 
 
