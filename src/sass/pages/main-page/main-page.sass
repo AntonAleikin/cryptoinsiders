@@ -8,17 +8,22 @@
     &__about
         font-family: $main-font
         width: 100%
+        color: white
         background-color: $bg-color
         letter-spacing: 0.5px
-        &-logo
+        &-header
             +large-text
             font-weight: 500
-            color: $main-color
         &-text
             width: 100%
             +medium-text
             font-weight: 400
-            color: white
+        &-link
+            +large-text
+            font-weight: 500
+            color: $main-color
+            text-decoration: none
+            
 
 // Large
 @media (max-width: 1279px)
@@ -28,10 +33,12 @@
             padding-left: 60px
             padding-bottom: 30px
         &__about
-            &-logo
+            &-header
                 +medium-text
             &-text
                 +normal-text
+            &-link
+                +medium-text
 
 // Medium
 @media (max-width: 991px)
@@ -41,10 +48,12 @@
             padding-left: 50px
             padding-bottom: 20px
         &__about
-            &-logo
+            &-header
                 +normal-text
             &-text
                 +small-text
+            &-link
+                +normal-text
 
 // Small
 @media (max-width: 799px)
@@ -53,10 +62,12 @@
             padding-top: 80px
             padding-left: 0
         &__about
-            &-logo
+            &-header
                 +small-text
             &-text
                 +mobile-text
+            &-link
+                +small-text
 
 // Mobile
 @media (max-width: 575px)

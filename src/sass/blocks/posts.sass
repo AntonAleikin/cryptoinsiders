@@ -1,0 +1,128 @@
+.posts
+    +basic-section
+    &__header
+        +h2-header-extra
+        margin-bottom: 75px
+        color: $main-color
+    &__wrapper
+        padding-left: 20px
+        width: 100%
+    &__items
+        width: 100%
+        +between-center
+        flex-wrap: wrap
+    &__item
+        padding: 20px
+        width: 49%
+        background-color: #212228
+        border-bottom: 1px solid grey
+        transition: background-color 0.6s ease
+        &-hover     
+            &:hover
+                background-color: $bg-color
+        &-link
+            text-decoration: none
+        &-header
+            +large-text
+            color: $main-color
+        &-descr
+            margin-top: 20px
+            color: white
+            +normal-text
+        &-date
+            margin-top: 20px
+            padding-right: 10px 
+            +normal-text
+            color: $main-color
+            display: flex
+            justify-content: flex-end
+            align-items: center
+    &__descr
+        margin-top: 50px
+        padding-left: 20px
+        +medium-text
+        font-weight: 500
+        color: white
+        &-link
+            color: $main-color
+            text-decoration: none
+
+// ================
+
+// Large
+@media (max-width: 1279px) 
+    .posts
+        +basic-section-large
+        &__header
+            +h2-header-large
+            margin-bottom: 65px
+        &__wrapper
+            padding-left: 15px
+        &__item
+            padding: 15px
+            &-header
+                +medium-text
+            &-descr
+                +small-text
+            &-date
+                +small-text
+        &__descr
+            margin-top: 40px
+            padding-left: 15px
+            +normal-text
+        
+// Medium
+@media (max-width: 991px) 
+    .posts
+        +basic-section-medium
+        &__header
+            +h2-header-medium
+            margin-bottom: 60px
+        &__wrapper
+            padding-left: 10px
+        &__item
+            padding: 10px
+            &-header
+                +normal-text
+            &-descr
+                +mobile-text
+            &-date
+                +mobile-text
+        &__descr
+            margin-top: 35px
+            padding-left: 10px
+            +small-text
+
+// Small
+@media (max-width: 799px)
+    .posts
+        +basic-section-small
+        &__header
+            +h2-header-small
+            margin-bottom: 50px
+        &__wrapper
+            padding-left: 0
+            +column-center-start
+        &__items
+            +center
+        &__item
+            width: 390px
+    
+// Mobile
+@media (max-width: 575px)
+    .posts
+        +basic-section-small
+        &__header
+            +h2-header-mobile
+            margin-bottom: 30px
+        &__item
+            width: 280px
+            &-header
+                +small-text
+            &-descr
+                +small-mobile-text
+            &-date
+                +small-mobile-text
+        &__descr
+            margin-top: 30px
+            +mobile-text
