@@ -24,11 +24,14 @@ $hamburger-item-color: white
     background-color: $nav-bg-color
     +between-center
     &__logo
+        height: 100%
+        +start-center
         &-link
+            height: 100%
             +logo-text
             font-size: 26px
         &-img
-            height: 80px
+            height: 80% //80px
 
     &__links
         // Лого для моб 
@@ -78,7 +81,7 @@ $hamburger-item-color: white
                 font-size: 22px
         &__links
             &-item
-                font-size: 14px
+                +normal-text
 
 // Medium
 @media (max-width: 991px) 
@@ -89,7 +92,7 @@ $hamburger-item-color: white
                 font-size: 20px
         &__links
             &-item
-                font-size: 13px
+                +small-text
                 margin-right: 16px
 
 // Small 
@@ -118,15 +121,12 @@ $hamburger-item-color: white
             transition: left 0.3s 
             &-logo
                 +between-center
-
                 height: 80px
                 width: 100%
                 &-link
-                    font-family: Gotham Pro, sans-serif
+                    height: 100%
+                    +logo-text
                     font-size: 18px
-                    font-weight: 600
-                    color: $logo-text-color
-                    text-decoration: none
                     &:hover
                         color: $logo-text-color
                         text-decoration: none

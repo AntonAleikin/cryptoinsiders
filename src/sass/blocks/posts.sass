@@ -9,11 +9,22 @@
         width: 100%
     &__items
         width: 100%
-        +between-center
-        flex-wrap: wrap
+        +start-center
+        &-inner
+            width: 100%
+            +start-center
+            flex-wrap: wrap
     &__item
+        margin-top: 20px
+        &:nth-child(1)
+            margin-top: 0
+        &:nth-child(2)
+            margin-top: 0
+        margin-right: 20px
+        &:nth-child(2n)
+            margin-right: 0
         padding: 20px
-        width: 49%
+        width: 48%
         background-color: #212228
         border-bottom: 1px solid grey
         transition: background-color 0.6s ease
@@ -23,12 +34,16 @@
         &-link
             text-decoration: none
         &-header
+            height: 70px // Фиксируем высоту заголовка - макс 60 символов таким шрифтом
             +large-text
             color: $main-color
+            +start-center
         &-descr
             margin-top: 20px
-            color: white
+            height: 112px // Фиксируем высоту описания - макс 150 символов таким шрифтом
             +normal-text
+            color: white
+            +start
         &-date
             margin-top: 20px
             padding-right: 10px 
@@ -37,15 +52,24 @@
             display: flex
             justify-content: flex-end
             align-items: center
-    &__descr
+    &__outter
+        width: 100%
+        +start-center
+    &__link
         margin-top: 50px
         padding-left: 20px
+        height: 30px
         +medium-text
         font-weight: 500
-        color: white
-        &-link
+        color: white 
+        text-decoration: none
+        +start-center
+        transition: color 0.6s ease 
+        &:hover
             color: $main-color
-            text-decoration: none
+        &-img
+            margin-left: 10px
+            height: inherit
 
 // ================
 
@@ -60,13 +84,16 @@
             padding-left: 15px
         &__item
             padding: 15px
+            width: 47%
             &-header
+                height: 60px
                 +medium-text
             &-descr
+                height: 100px
                 +small-text
             &-date
                 +small-text
-        &__descr
+        &__link
             margin-top: 40px
             padding-left: 15px
             +normal-text
@@ -80,18 +107,31 @@
             margin-bottom: 60px
         &__wrapper
             padding-left: 10px
+        &__items
+            display: block // Убираем флекс, а то скролла не будет 
+            overflow-x: scroll
+            &::-webkit-scrollbar
+                height: 8px
+                background-color: $bg-color
+            &::-webkit-scrollbar-thumb
+                background-color: grey 
+                &:hover
+                    background-color: $main-color
+            &-inner
+                width: 180%
+                flex-wrap: nowrap
         &__item
+            margin-top: 0
+            margin-right: 10px
+            &:nth-child(2n)
+                margin-right: 10px
+            &:nth-child(3)
+                margin-right: 0
             padding: 10px
-            &-header
-                +normal-text
-            &-descr
-                +mobile-text
-            &-date
-                +mobile-text
-        &__descr
-            margin-top: 35px
+            width: 33.33%
+        &__link
+            margin-top: 25px
             padding-left: 10px
-            +small-text
 
 // Small
 @media (max-width: 799px)
@@ -102,11 +142,23 @@
             margin-bottom: 50px
         &__wrapper
             padding-left: 0
-            +column-center-start
         &__items
-            +center
+            &::-webkit-scrollbar
+                display: none
+                height: 0
+                width: 0
+            &-inner
+                width: 210%
         &__item
-            width: 390px
+            &-header
+                height: 56px
+                +normal-text
+        &__link
+            margin-top: 25px
+            height: 25px
+            +small-text
+                
+            
     
 // Mobile
 @media (max-width: 575px)
@@ -115,14 +167,12 @@
         &__header
             +h2-header-mobile
             margin-bottom: 30px
+        &__items
+            &-inner
+                width: 285%
         &__item
-            width: 280px
             &-header
-                +small-text
+                height: 112px
             &-descr
-                +small-mobile-text
-            &-date
-                +small-mobile-text
-        &__descr
-            margin-top: 30px
-            +mobile-text
+                padding-left: 12px
+                height: 148px
