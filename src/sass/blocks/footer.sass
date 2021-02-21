@@ -2,56 +2,77 @@
     font-family: $second-font
     padding: $extra-large-padding
     padding-top: 95px
-    padding-bottom: 100px
+    padding-bottom: 95px
     width: 100%
     height: auto
     background-color: $bg-color
     box-shadow: 0px -1px 6px 1px black
     opacity: 0.5
-    +center
+    +column-center
     &__wrapper
-        width: 90%
+        padding-left: 70px // Обертка с отступом от бара соцсетей (как у всех)
+        width: 100%
         +between-start
-        position: relative
     &__logo
-        width: 35%
+        width: 32%
         +column-start
         &-link
             +logo-text
-            +medium-text
+            font-size: 26px
         &-descr
             margin-top: 20px
-            width: 85%
-            +small-text
+            width: 87%
+            +normal-text
             color: white
     &__columns
-        width: 65%
+        width: 68%
         +between-start
     &__column
         +column-start
-    &__items
-        margin-top: 15px
-        +column-start
-    &__item
-        margin-top: 5px
-        +small-text
-        color: white
-        text-decoration: none
-        &:hover
+        &-items
+            margin-top: 20px
+            +column-start
+        &-item
+            margin-top: 7px
+            &:first-child
+                margin-top: 0
+            +normal-text
+            font-weight: bold
+            color: white
+            text-decoration: none
+            transition: color 0.3s ease
+            &:hover
+                color: $main-color
+        &-header
+            +medium-text
+            font-weight: 500
             color: $main-color
-    &__header
+    &__developers
+        position: relative
+        margin-top: 80px
         +normal-text
         font-weight: 500
-        color: $main-color
-    &__developers
-        margin-top: 20px
-        +small-text
-        color: white
+        cursor: pointer
+        border-bottom: 1px solid $bg-color
+        transition: border-bottom 0.3s ease
+        &::before
+            content: ''
+            display: block
+            height: 1px
+            width: 50px
+            background-color: $main-color
+            position: absolute
+            top: -25px
+            left: 50%
+            transform: translateX(-50%)
         &-link
-            color: $main-color
+            color: white
             text-decoration: none
+        &-name
+            color: $main-color
+        &-hover
             &:hover
-                text-decoration: underline
+                border-bottom: 1px solid $main-color
 
 // =================
 
@@ -59,82 +80,86 @@
 @media (max-width: 1279px) 
     .footer
         padding: $large-padding
-        padding-top: 70px
-        padding-bottom: 90px
+        padding-top: 80px
+        padding-bottom: 80px
+        &__wrapper
+            padding-left: 60px
+            +column-start
         &__logo
+            width: 100%
             &-link
-                +normal-text
+                +large-text
             &-descr
                 margin-top: 15px
-                +mobile-text
-        &__item
-            margin-top: 5px
-            +mobile-text
-        &__header
-            +mobile-text
-        &__developers
-            margin-top: 15px
-            +mobile-text
+                width: 90%          
+        &__columns
+            margin-top: 50px
+            width: 90%
+        &__column
+            &-items
+                margin-top: 15px
+            
 
 // Medium
 @media (max-width: 991px) 
     .footer
         padding: $medium-padding
-        padding-top: 60px
+        padding-top: 70px
         padding-bottom: 70px
         &__wrapper
-            width: 90%
+            padding-left: 50px
         &__logo
             &-link
-                +small-text
+                font-size: 20px
             &-descr
-                width: 90%
-                +small-mobile-text
-        &__item
-            margin-top: 3px
-            +small-mobile-text
-        &__header
-            +small-mobile-text
+                +small-text
+        &__column    
+            &-item
+                +small-text
+            &-header
+                +normal-text
         &__developers
-            +small-mobile-text
+            margin-top: 70px
 
 // Small
 @media (max-width: 799px)
     .footer
+        padding-top: 60px
         padding-bottom: 60px
+        +column-start
         &__wrapper
-            width: 100%
-            flex-direction: column
+            padding-left: 0
         &__logo
-            width: 100%
-            &-link
-                +mobile-text
             &-descr
                 margin-top: 10px
         &__columns
             margin-top: 30px
             width: 100%
-        &__items
-            margin-top: 7px
+            +column-start
+        &__column
+            margin-top: 30px
+            &:first-child
+                margin-top: 0
+            &-items
+                margin-top: 10px
+            &-item
+                padding-left: 10px
         &__developers
-            position: absolute
-            bottom: 0
-            left: 0
+            margin-top: 60px
+            &::before
+                width: 100%
+                left: 0
+                transform: translateX(0)
 
 // Mobile
 @media (max-width: 575px)
     .footer
         padding: $mobile-padding
         padding-top: 50px
-        padding-bottom: 90px
-        &__columns
-            margin-top: 20px
-            flex-direction: column
-        &__column
-            margin-top: 20px
-            &:first-child
-                margin-top: 0
-        &__items
-            margin-top: 5px
+        padding-bottom: 50px
+        &__logo
+            &-descr
+                width: 100%
         &__developers
-            bottom: -40px
+            +small-text
+        

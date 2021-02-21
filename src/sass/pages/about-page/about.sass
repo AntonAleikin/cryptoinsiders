@@ -123,21 +123,8 @@
     .about
         +basic-section-small
         &__text
-            //+mobile-text
-        &__roadmap
-            &-date
-                justify-content: flex-start
-                //+mobile-text
-            &-text
-                width: 85%
-                //+mobile-text
-
-// Mobile
-@media (max-width: 575px)
-    .about
-        &__text
             &:last-child
-                margin-top: 25px
+                margin-top: 25px 
         &__roadmap
             margin-top: 25px
             &-item
@@ -145,8 +132,18 @@
                 flex-direction: column
                 justify-content: flex-start
                 align-items: flex-start
+            &-date
+                width: auto
+                +start-center
             &-bullet
                 display: none
             &-text
-                padding-left: 25px
+                padding-left: 60px
                 width: 100%
+
+// Mobile
+@media (max-width: 575px)
+    .about
+        &__roadmap
+            &-text
+                padding-left: 40px
