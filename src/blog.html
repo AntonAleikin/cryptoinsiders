@@ -145,68 +145,76 @@
 
 
         <!-- Сетка -->
-        <div class="page-content">
+        <div class="page-container">
+
+            <!-- Контент страницы -->
             <div class="blog-page">
-                <div class="blog-page__content">
 
-                    <div class="page-header">
-                        <h1 class="blog-page__header">Блог</h1>
+                <div class="page-header">
+                    <h1 class="blog-page__header">Блог</h1>
+                </div>
+
+                <!-- Категории -->
+                <div class="categories">
+                    <div class="categories__links">
+                        <a class="categories__links-item categories__links-item-hover" href="/news.html">Новости</a>
+                        <a class="categories__links-item categories__links-item-hover" href="">Биржи криптовалют</a>
+                        <a class="categories__links-item categories__links-item-hover" href="">Торговля криптовалютами</a>
                     </div>
+                </div>
 
-                    <!-- Категории -->
-                    <div class="categories">
-                        <div class="categories__links">
-                            <a class="categories__links-item categories__links-item-hover" href="/news.html">Новости</a>
-                            <a class="categories__links-item categories__links-item-hover" href="">Биржи криптовалют</a>
-                            <a class="categories__links-item categories__links-item-hover" href="">Торговля криптовалютами</a>
-                        </div>
-                    </div>
+                <!-- Недавние посты -->
+                <div class="recent-posts">
+                    <h2 class="recent-posts__header">Недавние публикации</h2>
 
-                    <!-- Недавние посты -->
-                    <div class="posts">
-                        <h2 class="posts__header">Недавние публикации</h2>
+                    <div class="recent-posts__wrapper">
 
-                        <div class="posts__wrapper">
+                        <div class="recent-posts__items">
 
-                            <div class="posts__items">
-                                <div class="posts__items-inner">
-                                    <div class="posts__item posts__item-hover">
-                                        <a href="" class="posts__item-link">
-                                            <h2 class="posts__item-header">Название поста</h2>
-        
-                                            <p class="posts__item-descr">
-                                                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1...
-                                            </p>
-        
-                                            <div class="posts__item-date">16.02.2021</div>
-                                        </a>
-                                    </div>
-        
-                                    <div class="posts__item posts__item-hover">
-                                        <a href="" class="posts__item-link">
-                                            <h2 class="posts__item-header">Название поста</h2>
-        
-                                            <p class="posts__item-descr">
-                                                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1...
-                                            </p>
-        
-                                            <div class="posts__item-date">16.02.2021</div>
-                                        </a>
-                                    </div>
-        
-                                    <div class="posts__item posts__item-hover">
-                                        <a href="" class="posts__item-link">
-                                            <h2 class="posts__item-header">Название поста</h2>
-        
-                                            <p class="posts__item-descr">
-                                                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1...
-                                            </p>
-        
-                                            <div class="posts__item-date">16.02.2021</div>
-                                        </a>
-                                    </div>
-                                </div>
+                            <div class="recent-posts__item recent-posts__item-hover">
+                                <a href="" class="recent-posts__item-link">
+                                    <!-- Макс длина 48 символов -->
+                                    <h2 class="recent-posts__item-header">Как начать торговать криптовалютой</h2>
+
+                                    <p class="recent-posts__item-descr">
+                                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1...
+                                    </p>
+
+                                    <div class="recent-posts__item-date">16.02.2021</div>
+                                </a>
                             </div>
+
+                            <div class="recent-posts__item recent-posts__item-hover">
+                                <a href="" class="recent-posts__item-link">
+                                    <h2 class="recent-posts__item-header">Популярные биржи для торговли криптовалютами...</h2>
+
+                                    <p class="recent-posts__item-descr">
+                                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1...
+                                    </p>
+
+                                    <div class="recent-posts__item-date">16.02.2021</div>
+                                </a>
+                            </div>
+
+                            <div class="recent-posts__item recent-posts__item-hover">
+                                <a href="" class="recent-posts__item-link">
+                                    <h2 class="recent-posts__item-header">Однострочный заголовок</h2>
+
+                                    <p class="recent-posts__item-descr">
+                                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1...
+                                    </p>
+
+                                    <div class="recent-posts__item-date">16.02.2021</div>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="recent-posts__load">
+                            <a class="main-button main-button-hover diagonal-swipe diagonal-swipe-hover">
+                                <div class="main-button__text">Загрузить еще</div>
+            
+                                <img class="main-button__img" src="assets/img/icons/pointer.svg" alt="pointer down">
+                            </a>
                         </div>
                     </div>
                 </div>

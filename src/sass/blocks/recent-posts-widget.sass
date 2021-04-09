@@ -1,0 +1,178 @@
+.recent-posts-widget
+    +basic-section
+    &__header
+        +h2-header-extra
+        margin-bottom: 75px
+        color: $main-color
+    &__wrapper
+        padding-left: 20px
+        width: 100%
+    &__items
+        width: 100%
+        +start-center
+        &-inner
+            width: 100%
+            +start-center
+            flex-wrap: wrap
+    &__item
+        margin-top: 20px
+        &:nth-child(1)
+            margin-top: 0
+        &:nth-child(2)
+            margin-top: 0
+        margin-right: 20px
+        &:nth-child(2n)
+            margin-right: 0
+        padding: 20px
+        width: 48%
+        background-color: #212228
+        border-bottom: 1px solid grey
+        transition: background-color 0.6s ease
+        &-hover     
+            &:hover
+                background-color: $bg-color
+        &-link
+            text-decoration: none
+        &-header
+            height: 70px // Фиксируем высоту заголовка - макс 60 символов таким шрифтом
+            +large-text
+            color: $main-color
+            +start-center
+        &-descr
+            margin-top: 20px
+            height: 112px // Фиксируем высоту описания - макс 150 символов таким шрифтом
+            +normal-text
+            color: white
+            +start
+        &-date
+            margin-top: 20px
+            padding-right: 10px 
+            +normal-text
+            color: $main-color
+            display: flex
+            justify-content: flex-end
+            align-items: center
+    &__outter
+        width: 100%
+        +start-center
+    &__link
+        margin-top: 50px
+        padding-left: 20px
+        height: 30px
+        +medium-text
+        font-weight: 500
+        color: white 
+        text-decoration: none
+        +start-center
+        transition: color 0.6s ease 
+        &:hover
+            color: $main-color
+        &-img
+            margin-left: 10px
+            height: inherit
+
+// ================
+
+// Large
+@media (max-width: 1279px) 
+    .recent-posts-widget
+        +basic-section-large
+        &__header
+            +h2-header-large
+            margin-bottom: 65px
+        &__wrapper
+            padding-left: 15px
+        &__item
+            padding: 15px
+            width: 47%
+            &-header
+                height: 60px
+                +medium-text
+            &-descr
+                height: 100px
+                +small-text
+            &-date
+                +small-text
+        &__link
+            margin-top: 40px
+            padding-left: 15px
+            +normal-text
+        
+// Medium
+@media (max-width: 991px) 
+    .recent-posts-widget
+        +basic-section-medium
+        &__header
+            +h2-header-medium
+            margin-bottom: 60px
+        &__wrapper
+            padding-left: 10px
+        &__items
+            display: block // Убираем флекс, а то скролла не будет 
+            overflow-x: scroll
+            &::-webkit-scrollbar
+                height: 8px
+                background-color: $bg-color
+            &::-webkit-scrollbar-thumb
+                background-color: grey 
+                &:hover
+                    background-color: $main-color
+            &-inner
+                width: 180%
+                flex-wrap: nowrap
+        &__item
+            margin-top: 0
+            margin-right: 10px
+            &:nth-child(2n)
+                margin-right: 10px
+            &:nth-child(3)
+                margin-right: 0
+            padding: 10px
+            width: 33.33%
+        &__link
+            margin-top: 25px
+            padding-left: 10px
+
+// Small
+@media (max-width: 799px)
+    .recent-posts-widget
+        +basic-section-small
+        &__header
+            +h2-header-small
+            margin-bottom: 50px
+        &__wrapper
+            padding-left: 0
+        &__items
+            &::-webkit-scrollbar
+                display: none
+                height: 0
+                width: 0
+            &-inner
+                width: 210%
+        &__item
+            &-header
+                height: 56px
+                +normal-text
+        &__link
+            margin-top: 25px
+            height: 25px
+            +small-text
+                
+            
+    
+// Mobile
+@media (max-width: 575px)
+    .recent-posts-widget
+        +basic-section-small
+        &__header
+            +h2-header-mobile
+            margin-bottom: 30px
+        &__items
+            &-inner
+                width: 285%
+        &__item
+            &-header
+                height: 112px
+            &-descr
+                padding-left: 12px
+                height: 148px

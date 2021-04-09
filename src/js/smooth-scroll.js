@@ -1,15 +1,13 @@
 const smoothScroll = () => 
 {
-    function scroll (hash, speed)
+    const scroll = (hash, speed) =>
     {
         let 
         windowTop = window.scrollY,
         toBlock = document.querySelector(hash).getBoundingClientRect().top,
         start = null;
 
-        requestAnimationFrame(step);
-
-        function step (time)
+        const step = (time) =>
         {
             if (start === null)
             {
@@ -32,33 +30,24 @@ const smoothScroll = () =>
             {
                 location.hash = hash;
             }
+        };
+
+        requestAnimationFrame(step);
+    };
+
+    const anableScroll = (links, speed) => {
+        if(!links) {
+            return;
         }
-    }
 
-    if (window.matchMedia("(min-width: 800px)").matches) 
-    {
-        const links = document.querySelectorAll('[href^="#"]');
-
-        if(links) {
-            links.forEach(link => {
-                link.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    scroll(this.hash, 0.7);
-                });
+        links.forEach(link => {
+            link.addEventListener('click', function(e) {
+                scroll(this.hash, speed);
             });
-        }
-    }
+        });
+    };
 
-    if (window.matchMedia("(max-width: 799px)").matches)
-    {
-        const link = document.querySelector('.hero__button-link');
-
-        if(link) {
-            link.addEventListener("click", function (e) {
-                e.preventDefault();
-                scroll(this.hash, 0.7);
-            });
-        }
-    }
+    const links = document.querySelectorAll('[href^="#"]');
+    anableScroll(links, 0.7);
 };
 export default smoothScroll;

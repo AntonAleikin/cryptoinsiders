@@ -5,6 +5,7 @@ import '@/sass/index.sass';
 import noHover from '@js/no-hover';
 import navActive from '@js/nav-active';
 import headerShadow from '@js/header';
+import mainButtons from '@js/main-buttons';
 import smoothScroll from '@js/smooth-scroll';
 import hamburger from '@js/hamburger';
 import dropDown from '@js/dropdown';
@@ -16,6 +17,7 @@ window.addEventListener("DOMContentLoaded", () =>
     navActive('nav__links-item');
     noHover();
     headerShadow();
+    mainButtons();
     smoothScroll(); 
     hamburger({
         hamburger: '.nav__hamburger',
