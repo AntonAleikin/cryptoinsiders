@@ -10,7 +10,9 @@ import smoothScroll from '@js/smooth-scroll';
 import hamburger from '@js/hamburger';
 import dropDown from '@js/dropdown';
 import contactsOverlay from '@js/contacts-overlay';
+import lazyLoad from '@js/lazy-load';
 import '@js/swiper';
+import 'fslightbox';
 
 window.addEventListener("DOMContentLoaded", () =>
 {
@@ -27,4 +29,5 @@ window.addEventListener("DOMContentLoaded", () =>
     });
     dropDown();
     contactsOverlay('contacts-overlay', 'data-contacts-overlay-activator');
+    lazyLoad();
 });

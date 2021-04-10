@@ -66,10 +66,10 @@
 
 
         <!-- Сетка -->
-        <div class="container">
+        <div class="post-container">
 
             <!-- Страница с контентом -->
-            <div class="post-page">
+            <article class="post-page">
 
                 <h1 class="post-page__header">Как начать торговать криптовалютой</h1>
 
@@ -77,42 +77,94 @@
 
                 <div class="crumbles">
 
-                    <div class="crumbles__base">
-                        <div data-crumbles="home" class="crumbles__item">
-                            <img src="assets/img/icons/crumbles-home.svg" class="crumbles__item-icon">
+                    <div class="crumbles__base crumbles__items">
+                        <a href="/" data-crumbles="home" class="crumbles__item">
+                            <img src="assets/img/icons/crumbles-home.svg" class="crumbles__item-icon" alt="home icon">
                             <div class="crumbles__item-text">Главная</div>
-                        </div>
+                        </a>
 
-                        <div class="crumbles__item">
-                            <img src="assets/img/icons/crumbles-arrow.svg" class="crumbles__item-icon">
+                        <a href="/blog" class="crumbles__item">
+                            <img src="assets/img/icons/crumbles-arrow.svg" class="crumbles__item-icon" alt="arrow icon">
                             <div class="crumbles__item-text">Блог</div>
-                        </div>
+                        </a>
                     </div>
 
                     <div class="crumbles__items">
-                        <div class="crumbles__item">
-                            <img src="assets/img/icons/crumbles-arrow.svg" class="crumbles__item-icon">
+                        <a href="" class="crumbles__item">
+                            <img src="assets/img/icons/crumbles-arrow.svg" class="crumbles__item-icon" alt="arrow icon">
                             <div class="crumbles__item-text">Категория</div>
-                        </div>
+                        </a>
 
-                        <div class="crumbles__item">
-                            <img src="assets/img/icons/crumbles-arrow.svg" class="crumbles__item-icon">
+                        <a href="" class="crumbles__item">
+                            <img src="assets/img/icons/crumbles-arrow.svg" class="crumbles__item-icon" alt="arrow icon">
                             <div class="crumbles__item-text">Пост</div>
-                        </div>
+                        </a>
                     </div>
-
-                    Дома -> Блог Категория -> Пост
                 </div>
 
-                <br>
-                <hr>
-            </div>
+                <!-- Зона, удобная для чтения поста (Белый цвет) -->
+                <article class="post-page__article">
 
-            <!-- Контейнер для содержимого поста -->
-            <div class="article-container">
+                    <h2 id="" class="article-subtitle">С чего мне начать?</h2>
 
-            </div>
+                    <p class="article-paragraph">
+                        Значимость этих проблем настолько очевидна, что реализация намеченных плановых заданий позволяет выполнять важные задания по разработке систем массового участия. Не следует, однако забывать, что начало повседневной работы по формированию позиции влечет за собой процесс внедрения и модернизации новых предложений.
+                    </p>
+
+                    <div class="article-media">
+                        <a data-fslightbox data-type="image" href="https://storage.googleapis.com/media.cryptoinsidersignals.com/John_304cac2960/John_304cac2960.jpg">
+                            <img class="article-media__img" data-post-media-src="https://storage.googleapis.com/media.cryptoinsidersignals.com/John_304cac2960/John_304cac2960.jpg" src="#" alt="">
+                        </a>
+                    </div>
+                </article>
+            </article>
         </div>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="footer__wrapper">
+                
+                <div class="footer__logo">
+                    <a href="/" class="footer__logo-link">Crypto insider signals</a>
+                    <p class="footer__logo-descr">
+                        Медиа площадка, которая поможет вашему бизнесу расти в Telegram. А также коллекция лучших VIP сигналов для торговли на рынке криптовалют.
+                    </p>
+                </div>
+
+                <div class="footer__columns">
+
+                    <div class="footer__column">
+                        <div class="footer__column-header">Для связи</div>
+                        <div class="footer__column-items">
+                            <a class="footer__column-item" href="https://t.me/insidemanager">Insider manager</a>
+                            <a class="footer__column-item" href="mailto:info@cryptoinsidersignals.com">info@cryptoinsidersignals.com</a>
+                        </div>
+                    </div>
+            
+                    <div class="footer__column">
+                        <div class="footer__column-header">Наши Telegram каналы</div>
+                        <div class="footer__column-items">
+                            <a class="footer__column-item" href="https://t.me/joinchat/AAAAAEpZ6ZrDUF6HEgo0MA">Crypto insider signals</a>
+                            <a class="footer__column-item" href="https://t.me/joinchat/AAAAAEkrAxnOyNHec-VAHw">Crypto Hais</a>
+                            <a class="footer__column-item" href="https://t.me/joinchat/AAAAAEw8DdhK1TmbP2eKww">Yovio Trade</a>
+                            <a class="footer__column-item" href="https://t.me/joinchat/AAAAAEcsmYIkmDNF4FpmZQ">Crypto Don Alt</a>
+                            <a class="footer__column-item" href="https://t.me/Crypto_give">Crypto Give</a>
+                        </div>
+                    </div>
+            
+                    <div class="footer__column">
+                        <div class="footer__column-header">Instagram</div>
+                        <div class="footer__column-items">
+                            <a class="footer__column-item" href="https://www.instagram.com/crypto_insider_signals/">Crypto insider signals</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer__developers footer__developers-hover">
+                <a class="footer__developers-link" href="#">Сайт разработал <span class="footer__developers-name">Антон Алейкин</span></a>
+            </div>
+        </footer>
     </div>
 </body>
 </html>
