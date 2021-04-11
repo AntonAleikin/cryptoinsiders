@@ -4,90 +4,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <!-- Primary Meta Tags -->
-    <title>Блог | Crypto insider signals</title>
-    <meta name="title" content="Crypto insider signals">
-    <meta name="description" content="Медиа площадка, которая поможет вашему бизнесу расти в Telegram. А также коллекция лучших сигналов для торговли на рынке криптовалют!">
-
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://simple-e-chat.ru.com/">
-    <meta property="og:title" content="Crypto insider signals">
-    <meta property="og:description" content="Медиа площадка, которая поможет вашему бизнесу расти в Telegram. А также коллекция лучших сигналов для торговли на рынке криптовалют!">
-    <meta property="og:image" content="https://simple-e-chat.ru.com/media/bull-og.png">
-
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://simple-e-chat.ru.com/">
-    <meta property="twitter:title" content="Crypto insider signals">
-    <meta property="twitter:description" content="Медиа площадка, которая поможет вашему бизнесу расти в Telegram. А также коллекция лучших сигналов для торговли на рынке криптовалют!">
-    <meta property="twitter:image" content="https://simple-e-chat.ru.com/media/bull-og.png">
-
-    <!-- Favicons -->
-    <link rel="apple-touch-icon" sizes="60x60" href="/media/apple-touch-icon-60x60.png?1=E6w4X2leEa">
-    <link rel="apple-touch-icon" sizes="76x76" href="/media/apple-touch-icon-76x76.png?1=E6w4X2leEa">
-    <link rel="apple-touch-icon" sizes="120x120" href="/media/apple-touch-icon-120x120.png?1=E6w4X2leEa">
-    <link rel="apple-touch-icon" sizes="152x152" href="/media/apple-touch-icon-152x152.png?1=E6w4X2leEa">
-    <link rel="apple-touch-icon" sizes="180x180" href="/media/apple-touch-icon-180x180.png?1=E6w4X2leEa">
-    <link rel="icon" type="image/png" sizes="32x32" href="/media/favicon-32x32.png?1=E6w4X2leEa">
-    <link rel="icon" type="image/png" sizes="192x192" href="/media/android-chrome-192x192.png?1=E6w4X2leEa">
-    <link rel="icon" type="image/png" sizes="16x16" href="/media/favicon-16x16.png?1=E6w4X2leEa">
-    <link rel="manifest" href="/media/site.webmanifest?1=E6w4X2leEa">
-    <link rel="mask-icon" href="/media/safari-pinned-tab.svg?1=E6w4X2leEa" color="#1a1b20">
-    <link rel="shortcut icon" href="/media/favicon.ico?1=E6w4X2leEa">
-    <meta name="apple-mobile-web-app-title" content="Signals">
-    <meta name="application-name" content="Signals">
-    <meta name="msapplication-TileColor" content="#1a1b20">
-    <meta name="theme-color" content="#ffffff">
+    <title>Новости | Crypto insider Signals</title> <!-- Создать динамически -->
 </head>
-<body class="body">
-    <script>
-        (function(){
-            function newElement(tag, className) {
-                const element = document.createElement(tag);
-                element.classList.add(className);
-                document.body.prepend(element);
-                return element;
-            }
-
-            class Preloader {
-                constructor() {
-                    this.preloader = newElement('div', 'preloader');
-                }
-                setContent(template) {
-                    this.preloader.innerHTML = template;
-                }
-                gatContent () {
-                    return this.content = this.preloader.firstElementChild;
-                }
-                hide() {
-                    setTimeout(() => this.gatContent().classList.add('preloader__content_hidden'), 2200);
-                    setTimeout(() => this.preloader.classList.add('preloader_hidden'), 2800);
-                    setTimeout(() => this.preloader.style.display = 'none', 3000);
-                }
-                setSession() {
-                    sessionStorage.preloader = 'loaded';
-                }
-            }
-
-            if(!sessionStorage.preloader) {
-                const preloader = new Preloader();
-                preloader.setContent(
-                    `
-                        <div class="preloader__content">
-                            <div class="loading-circle"></div>
-                            <div class="loading-circle"></div>
-                            <div class="loading-circle"></div>
-                        </div>
-                    `
-                );
-                preloader.hide();
-                preloader.setSession();
-            }
-        }())
-    </script>
-
+<body>
     <div id="page-wrapper">
         <!-- Хедер -->
         <header class="header"> 
@@ -148,25 +67,38 @@
         <div class="container">
 
             <!-- Контент страницы -->
-            <div class="blog-page">
+            <div class="category-page">
 
                 <div class="page-header">
-                    <h1 class="blog-page__header">Блог</h1>
+                    <h1 class="category-page__header">Новости</h1>
                 </div>
 
-                <!-- Категории -->
-                <div class="categories">
-                    <div class="categories__links">
-                        <a class="categories__links-item categories__links-item-hover" href="/category.html">Новости</a>
-                        <a class="categories__links-item categories__links-item-hover" href="">Биржи криптовалют</a>
-                        <a class="categories__links-item categories__links-item-hover" href="">Торговля криптовалютами</a>
+                <div class="category-page__crumbles">
+                    <div class="crumbles">
+                        <div class="crumbles__wrapper">
+    
+                            <div class="crumbles__base">
+                                <a href="/" data-crumbles="home" class="crumbles__item crumbles__home">
+                                    <img src="assets/img/icons/crumbles-home.svg" class="crumbles__item-icon crumbles__home-icon" alt="crumbles home icon">
+                                    <div class="crumbles__item-text crumbles__home-text">Главная</div>
+                                </a>
+        
+                                <a href="/blog" class="crumbles__item">
+                                    <img src="assets/img/icons/crumbles-arrow.svg" class="crumbles__item-icon" alt="crumbles arrow icon">
+                                    <div class="crumbles__item-text">Блог</div>
+                                </a>
+                            </div>
+    
+                            <a class="crumbles__item crumbles__active">
+                                <img src="assets/img/icons/crumbles-arrow.svg" class="crumbles__item-icon" alt="crumbles arrow icon">
+                                <div class="crumbles__item-text crumbles__active-text">Новости</div>
+                            </a>
+                        </div>
                     </div>
                 </div>
 
                 <!-- Недавние посты -->
                 <div data-post-category="" class="recent-posts">
-                    <h2 class="recent-posts__header">Недавние публикации</h2>
-
                     <div class="recent-posts__wrapper">
 
                         <div class="recent-posts__items">

@@ -133,6 +133,7 @@ const plugins = () => // Тут все наши плагины и их анал�
         }),
         new HTMLWebpackPlugin(addHtmlPage('./about.html', 'about.html')),
         new HTMLWebpackPlugin(addHtmlPage('./blog.html', 'blog.html')),
+        new HTMLWebpackPlugin(addHtmlPage('./category.html', 'category.html')),
         new HTMLWebpackPlugin(addHtmlPage('./post.html', 'post.html')),
 
         new MiniCssExtractPlugin({
