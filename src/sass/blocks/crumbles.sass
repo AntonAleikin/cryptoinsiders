@@ -2,7 +2,10 @@
     margin-bottom: 10px
     padding: 10px
     +start-center
-    &__items
+    &__wrapper
+        +start-center
+        flex-wrap: wrap
+    &__base
         +start-center
     &__item
         margin-right: 10px
@@ -13,3 +16,42 @@
             color: white
         &-icon
             margin-right: 10px
+            height: 14px
+    &__home
+        &-icon
+            height: 16px
+    &__active
+        &-text
+            color: $main-color
+
+// ================
+
+// Medium
+@media (max-width: 991px)
+    .crumbles
+        margin-bottom: 7px
+        &__item
+            margin-right: 7px
+            &-text
+                +small-text
+            &-icon
+                margin-right: 7px
+                height: 12px
+        &__home
+            &-icon
+                height: 14px
+
+// Mobile
+@media (max-width: 575px)
+    .crumbles
+        &__item
+            padding-top: 5px
+            &-text
+                //+mobile-text
+                font-size: 13px
+                line-height: 22px
+            &-icon
+                height: 10px
+        &__home
+            &-icon
+                height: 12px

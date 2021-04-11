@@ -16,7 +16,7 @@ import 'fslightbox';
 
 window.addEventListener("DOMContentLoaded", () =>
 {
-    navActive('nav__links-item');
+    navActive('nav__links-item'); // Потом удалить, Подсветку делаем на сервере
     noHover();
     headerShadow();
     mainButtons();
@@ -29,5 +29,5 @@ window.addEventListener("DOMContentLoaded", () =>
     });
     dropDown();
     contactsOverlay('contacts-overlay', 'data-contacts-overlay-activator');
-    lazyLoad();
+    lazyLoad(['[data-post-media-src]']);
 });

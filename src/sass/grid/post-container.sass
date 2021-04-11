@@ -1,6 +1,23 @@
 .post-container
     margin: 0 auto
     padding-top: 100px // Высота хедера
-    width: 800px //960px //1140px //100% 
+    width: 800px  
     height: auto
     position: relative
+
+// ================
+
+// Large
+@media (max-width: 1279px)
+    .post-container
+        padding-top: 90px
+
+// Medium 
+@media (max-width: 991px)
+    .post-container
+        width: 660px 
+
+// Small
+@media (max-width: 799px)
+    .post-container
+        width: 100%
