@@ -1,0 +1,64 @@
+.error-page
+    +page-setup
+    padding-left: 70px
+    padding-bottom: 40px
+    &__header
+        font-family: Gotham Pro
+        +page-header-extra
+        color: $main-color
+    &__descr
+        +basic-section
+        padding-left: 20px
+        +large-text
+        color: white
+
+// =============
+
+// Extra-large
+@media (min-width: 1400px)
+    .error-page
+        padding-left: 0
+
+// Large
+@media (max-width: 1279px) 
+    .error-page
+        padding-left: 60px
+        padding-bottom: 30px
+        &__header
+            +page-header-large
+        &__descr
+            +basic-section-large
+            +medium-text
+
+// Medium
+@media (max-width: 991px) 
+    .error-page
+        padding-left: 50px
+        padding-bottom: 20px
+        &__header
+            +page-header-medium
+        &__descr
+            +basic-section-medium
+            padding-left: 10px
+            +normal-text
+    
+// Small
+@media (max-width: 799px)
+    .error-page
+        padding-left: 0
+        &__header
+            +page-header-small
+        &__descr
+            +basic-section-small
+            
+
+// Mobile
+@media (max-width: 575px)
+    .error-page
+        padding-bottom: 0
+        &__header
+            +page-header-mobile
+        &__descr
+            +basic-section-mobile
+            //padding-left: 0
+            +small-text

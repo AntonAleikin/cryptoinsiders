@@ -9,9 +9,13 @@
         font-weight: 500
         margin: 80px 0 40px 0
         color: $main-color
+    &__nav
+        margin-bottom: 40px
+        padding: 15px 
+        background-color: #212228
     &__date
         margin-bottom: 40px
-        margin-left: 10px
+        //margin-left: 0 //10px
         +medium-text
         color: $main-color
     &__crumbles
@@ -42,6 +46,8 @@
         &__header
             +page-header-small
             margin: 60px 0 30px 0
+        &__nav
+            margin-bottom: 30px
         &__date
             margin-bottom: 30px
             +small-text
@@ -54,7 +60,7 @@
 @media (max-width: 799px)
     .post-page
         &__description
-            padding-left: 20px
+            padding: 0 20px 0 20px
         &__header
             +page-header-mobile
             margin: 50px 0 30px 0
@@ -66,11 +72,11 @@
 @media (max-width: 575px)
     .post-page
         &__description
-            padding-left: 15px
+            padding: 0 15px 0 15px
         &__header
             font-size: 22px
-            line-height: 30px
-            margin: 40px 0 20px 0
+            line-height: 32px
+            margin: 40px 0 30px 0
         &__article
             padding: 15px
             padding-top: 40px

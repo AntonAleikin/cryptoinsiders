@@ -164,12 +164,12 @@
                 </div>
 
                 <!-- Недавние посты -->
-                <div data-post-category="" class="recent-posts">
-                    <h2 class="recent-posts__header">Недавние публикации</h2>
+                <div class="recent-posts">
+                    <!-- <h2 class="recent-posts__header">Недавние публикации</h2> -->
 
                     <div class="recent-posts__wrapper">
 
-                        <div class="recent-posts__items">
+                        <div id="post-cards-container" data-post-category="" class="recent-posts__items">
 
                             <div class="recent-posts__item recent-posts__item-hover">
                                 <a href="/post.html" class="recent-posts__item-link">
@@ -207,10 +207,27 @@
                                     <div class="recent-posts__item-date">16.02.2021</div>
                                 </a>
                             </div>
+
+                            <div class="recent-posts__item recent-posts__item-hover">
+                                <a href="" class="recent-posts__item-link">
+                                    <h2 class="recent-posts__item-header">Однострочный заголовок</h2>
+
+                                    <p class="recent-posts__item-descr">
+                                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1...
+                                    </p>
+
+                                    <div class="recent-posts__item-date">16.02.2021</div>
+                                </a>
+                            </div>
+
+                            <!-- Перенести в JS этот шаблон сообщения -->
+                            <!-- <div class="recent-posts__load-empty">
+                                <div class="recent-posts__load-message">Пока что, это все. ¯\_(ツ)_/¯</div>
+                            </div> -->
                         </div>
 
                         <div class="recent-posts__load">
-                            <a class="main-button main-button-hover diagonal-swipe diagonal-swipe-hover">
+                            <a id="post-cards-load-activator" class="main-button main-button-hover diagonal-swipe diagonal-swipe-hover">
                                 <div class="main-button__text">Загрузить еще</div>
             
                                 <img class="main-button__img" src="assets/img/icons/pointer.svg" alt="pointer down">

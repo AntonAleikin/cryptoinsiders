@@ -51,6 +51,14 @@
             align-items: center
     &__load
         margin-top: 40px
+        &-empty
+            margin-top: 60px
+            width: 100%
+            +center
+        &-message
+            +normal-text
+            color: $main-color
+
 
 // ================
 
@@ -77,6 +85,11 @@
             margin-top: 40px
             padding-left: 15px
             +normal-text
+        &__load
+            &-empty
+                margin-top: 50px
+            &-message
+                +small-text
         
 // Medium
 @media (max-width: 991px) 
@@ -117,6 +130,9 @@
             margin-top: 25px
             height: 25px
             +small-text
+        &__load
+            &-empty
+                margin-top: 40px
             
     
 // Mobile

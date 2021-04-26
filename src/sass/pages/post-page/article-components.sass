@@ -1,4 +1,31 @@
 .article
+    &-nav
+        +column-start
+        &__item
+            margin-bottom: 14px
+            &:last-child
+                margin-bottom: 0
+            padding-left: 18px
+            +start-center
+            position: relative
+            &::before
+                content: ''
+                display: block
+                height: 6px
+                width: 6px
+                background-color: $main-color
+                position: absolute
+                left: 0
+                top: 50%
+                transform: translateY(-50%)
+        &__link
+            +medium-text
+            color: white
+            text-decoration: none
+            transition: color 0.6s ease
+            &-hover
+                &:hover
+                    color: $main-color
     &-subtitle
         margin-bottom: 40px
         width: 100%
@@ -9,6 +36,8 @@
         width: 100%
         +medium-text
         color: black
+        &__link
+            color: $main-color
     &-media
         margin-bottom: 40px
         width: 100%
@@ -20,6 +49,9 @@
 // Large
 @media (max-width: 1279px)  
     .article
+        &-nav
+            &__link
+                +normal-text
         &-subtitle    
             margin-bottom: 30px  
             +medium-text
@@ -32,6 +64,11 @@
 // Medium
 @media (max-width: 991px)
     .article
+        &-nav
+            &__item
+                padding-left: 15px
+            &__link
+                +small-text
         &-subtitle    
             margin-bottom: 20px  
             +normal-text

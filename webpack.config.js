@@ -13,6 +13,8 @@ const { config } = require('webpack');
 const isDev = process.env.NODE_ENV === 'development';
 const isProd = !isDev;
 
+const minifyHtml = false;
+
 
 const optimization = () => // Ф-ция для раздела оптимизации
 {   
@@ -115,9 +117,7 @@ const addHtmlPage = (templatePath, filenameStr) =>
     return {
         filename: filenameStr,
         template: templatePath,
-        minify: {
-            collapseWhitespace: isProd
-        },
+        minify: minifyHtml,
     };
 };
 
@@ -127,14 +127,13 @@ const plugins = () => // Тут все наши плагины и их анал�
     const base = [
         new HTMLWebpackPlugin({
             template: './index.html',
-            minify: {
-                collapseWhitespace: isProd
-            },
+            minify: minifyHtml,
         }),
         new HTMLWebpackPlugin(addHtmlPage('./about.html', 'about.html')),
         new HTMLWebpackPlugin(addHtmlPage('./blog.html', 'blog.html')),
         new HTMLWebpackPlugin(addHtmlPage('./category.html', 'category.html')),
         new HTMLWebpackPlugin(addHtmlPage('./post.html', 'post.html')),
+        new HTMLWebpackPlugin(addHtmlPage('./error.html', 'error.html')),
 
         new MiniCssExtractPlugin({
             filename: '[name].[contenthash].css'
@@ -200,7 +199,7 @@ module.exports = // Экспортируем объект настроек дл�
 
     // Сервер для разработки
     devServer: {
-        port: 3000,
+        port: 4000,
         open: true
     },
 
@@ -259,6 +258,7 @@ module.exports = // Экспортируем объект настроек дл�
                 use: {
                     loader: 'html-loader',
                     options: {
+                        minimize: minifyHtml,
                         attributes: {
                             list: [
                                 {
